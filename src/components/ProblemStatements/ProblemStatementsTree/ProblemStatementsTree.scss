@@ -1,0 +1,29 @@
+.node-container {
+    
+}
+
+.notched-corner-rect {
+    max-width: 400px;
+    padding: 3rem;
+    background: #f06d06;
+    
+    --notchSize: 20px;
+    
+    clip-path: 
+      polygon(
+        0% var(--notchSize), 
+        var(--notchSize) 0%, 
+        calc(100% - var(--notchSize)) 0%, 
+        100% var(--notchSize), 
+        100% calc(100% - var(--notchSize)), 
+        calc(100% - var(--notchSize)) 100%, 
+        var(--notchSize) 100%, 
+        0% calc(100% - var(--notchSize))
+    );
+}
+
+.child-nodes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}

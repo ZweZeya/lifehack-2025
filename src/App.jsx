@@ -1,6 +1,7 @@
 import './App.css'
 import AboutWindowFrame from './components/About/AboutWindowFrame/AboutWindowFrame'
 import Background from './components/Background/Background'
+import ProblemStatementsTree from './components/ProblemStatements/ProblemStatementsTree/ProblemStatementsTree'
 
 function App() {
     return (
@@ -9,6 +10,7 @@ function App() {
 
             <div>
                 <AboutWindowFrame />
+                <ProblemStatementsTree />
             </div>
         </>
     )
