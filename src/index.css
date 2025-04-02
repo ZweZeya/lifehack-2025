@@ -23,6 +23,7 @@ a:hover {
 }
 
 body {
+  font-family: "Azeret Mono", monospace;
   margin: 0;
   display: flex;
   place-items: center;

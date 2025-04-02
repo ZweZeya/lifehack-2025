@@ -1,13 +1,11 @@
 import './App.css'
-import WindowFrame from './components/common/WindowFrame/WindowFrame'
+import AboutWindowFrame from './components/About/AboutWindowFrame/AboutWindowFrame'
 
 function App() {
     return (
         <>
             <div>
-                <WindowFrame>
-                    <p>Hello, this is some placeholder text.</p>
-                </WindowFrame>
+                <AboutWindowFrame />
             </div>
         </>
     )
