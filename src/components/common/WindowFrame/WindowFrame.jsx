@@ -17,7 +17,7 @@ const WindowFrame = (props) => {
     }
 
     return (
-        <div className={`container ${glitches[glitchType + 1]}`}>
+        <div className={`window-frame-container ${glitches[glitchType + 1]}`}>
             <div className="top-bar">
                 <div className="close-btn" onClick={handleClick}>
                     <AiOutlineClose size={props.iconSize ? props.iconSize : 25} className="close-icon" />
