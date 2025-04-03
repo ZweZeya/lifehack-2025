@@ -1,10 +1,12 @@
-import './App.css';
 import AboutWindowFrame from './components/About/AboutWindowFrame/AboutWindowFrame';
 import Background from './components/Background/Background';
 import Countdown from './components/Countdown/Countdown';
 import Hero from './components/Hero/Hero';
+import MapWindowFrame from './components/Map/MapWindowFrame/MapWindowFrame';
 import ProblemStatementsTree from './components/ProblemStatements/ProblemStatementsTree/ProblemStatementsTree';
 import Timeline from './components/Timeline/Timeline';
+
+import './App.css';
 
 function App() {
     return (
@@ -28,6 +30,10 @@ function App() {
 
                 <section>
                     <Timeline />
+                </section>
+
+                <section>
+                    <MapWindowFrame />
                 </section>
             </div>
         </>
