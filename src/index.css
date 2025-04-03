@@ -13,6 +13,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  overscroll-behavior-y: none;
+  scroll-behavior: smooth;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
