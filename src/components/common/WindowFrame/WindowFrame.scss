@@ -4,6 +4,8 @@ $glitch-blue: cyan;
 $glitch-duration: .2s;
 
 .window-frame-container {
+    margin: 2rem 8rem;
+    padding: 1rem;
     border: 0.125rem solid white; 
     border-radius: 0.5rem; 
     background-color: rgba(0, 0, 0, 0.6);

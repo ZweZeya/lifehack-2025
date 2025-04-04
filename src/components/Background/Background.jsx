@@ -6,12 +6,15 @@ import "./Background.scss";
 const Background = () => {
     const containerRef = useRef();
 
+    // Inspired by Daniel Shiffman's sketch
+    // https://editor.p5js.org/codingtrain/sketches/OPYPc4ueq
     const Sketch = (p) => {
-        let camera;
-        let cyan = p.color("#04D9FF");
-        let darkBlue = p.color("#14143A");
-        let cellSize = 20;
+        const cellSize = 20;
 
+        let gridLineColor = p.color("#04D9FF");
+        let backgroundColor = p.color("#14143A");
+        
+        let camera;
         let rows;
         let cols
         let flying = 0;
@@ -34,14 +37,16 @@ const Background = () => {
 
         p.windowResized = () => {
             p.resizeCanvas(p.windowWidth, p.windowHeight);
-            camera.setPosition(0, 600, 120);
-            camera.lookAt(0, 1, 0);
-            let aspectRatio = p.windowWidth / p.windowHeight;
-            p.perspective(p.PI / 4, aspectRatio, 10, 1600);
+            if (camera) {
+                camera.setPosition(0, 600, 120);
+                camera.lookAt(0, 1, 0);
+                let aspectRatio = p.windowWidth / p.windowHeight;
+                p.perspective(p.PI / 4, aspectRatio, 10, 1600);
+            }
         }
 
         p.draw = () => {
-            p.background(darkBlue);
+            p.background(backgroundColor);
             p.translate(-p.windowWidth / 2, 0, 0);
 
             drawCells();
@@ -50,8 +55,8 @@ const Background = () => {
 
         const drawCells = () => {
             p.push();
-            p.stroke(cyan);
-            p.fill(darkBlue);
+            p.stroke(gridLineColor);
+            p.fill(backgroundColor);
             updateCells();
             for (let y = 0; y < rows - 1; y++) {
                 p.beginShape(p.TRIANGLE_STRIP);
@@ -95,7 +100,7 @@ const Background = () => {
     }, []);
 
     return (
-        <div className="canvas-container" ref={containerRef} />
+        <div className="background-container" ref={containerRef} />
     );
 };
 
