@@ -4,12 +4,6 @@
   text-align: center;
 }
 
-.gradient-transition {
-  width: 100vw;
-  height: 20vh;
-  background: linear-gradient(#080800FF, #080800FF, #08080800);
-}
-
 section {
   width: 100vw;
   display: flex;
