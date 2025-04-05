@@ -11,3 +11,7 @@ section {
   justify-content: center;
   align-items: center;
 }
+
+.about {
+  margin-bottom: 20vh;
+}
