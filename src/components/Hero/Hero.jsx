@@ -11,7 +11,7 @@ const Hero = () => {
     const Sketch = (p) => {
         const w = 320;
         const h = 240;
-        
+
         const logoSize = 220;
         const frameWidth = 60;
         const standTopWidth = 120;
@@ -26,20 +26,27 @@ const Hero = () => {
         let computerStand;
         let glow;
 
+        let theta = 0;
         let barY1;
         let barY2;
         let ppx;
 
         p.setup = () => {
             p.createCanvas(p.windowWidth, p.windowHeight * 0.8);
-            
+
             setupComputerScreen();
             setupComputerFrame();
             setupComputerStand();
             setupGlow();
-            
+
             p.frameRate(12);
             p.noSmooth();
+
+            p.loadImage("/logo_circle.png", (image) => {
+                image.resize(logoSize, logoSize);
+                logo.copy(image, 0, 0, logoSize, logoSize, (w - logoSize) / 2, (h - logoSize) / 2, logoSize, logoSize);
+                logo.loadPixels();
+            });
         }
 
         p.windowResized = () => {
@@ -62,13 +69,12 @@ const Hero = () => {
 
             p.image(computerFrame, 0, 0);
             p.image(computerStand, 0, 0);
-            p.image(glow, 0, 0);
 
-            p.loadImage("/logo_circle.png", (image) => {
-                image.resize(logoSize, logoSize);
-                logo.copy(image, 0, 0, logoSize, logoSize, (w - logoSize) / 2, (h - logoSize) / 2, logoSize, logoSize);
-                logo.loadPixels();
-            });
+            p.push();
+            theta += 0.2;
+            p.tint(255, 255, 255, (p.sin(theta) * 60) + 195);
+            p.image(glow, 0, 0);
+            p.pop();
         }
 
         const setupComputerScreen = () => {
@@ -118,8 +124,10 @@ const Hero = () => {
 
         const setupGlow = () => {
             glow = p.createGraphics(p.width, p.height);
-            glow.drawingContext.shadowBlur = 320;
-            glow.drawingContext.shadowColor = p.color(140, 205, 207);
+            glow.drawingContext.shadowBlur = 160;
+            glow.drawingContext.shadowColor = p.color(160, 215, 225, 120);
+            glow.rect((p.width - w) / 2, (p.height - h) / 2, w, h);
+            glow.drawingContext.shadowColor = p.color(160, 215, 225, 60);
             glow.rect((p.width - w) / 2, (p.height - h) / 2, w, h);
 
             glow.drawingContext.shadowBlur = 0;
