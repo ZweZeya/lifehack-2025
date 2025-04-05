@@ -3,9 +3,6 @@
   font-weight: 400;
   font-family: "Azeret Mono", monospace;
 
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -15,6 +12,7 @@
 html {
   overscroll-behavior-y: none;
   scroll-behavior: smooth;
+  background-color: #080808;
 }
 
 body {

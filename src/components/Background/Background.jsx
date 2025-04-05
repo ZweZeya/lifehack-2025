@@ -6,91 +6,106 @@ import "./Background.scss";
 const Background = () => {
     const containerRef = useRef();
 
-    // Inspired by Daniel Shiffman's sketch
-    // https://editor.p5js.org/codingtrain/sketches/OPYPc4ueq
+    // Inspired by BarneyCodes's sketch
+    // https://editor.p5js.org/BarneyCodes/sketches/XUer03ShM
     const Sketch = (p) => {
-        const cellSize = 20;
+        let screen;
+        let glitchShader;
 
-        let gridLineColor = p.color("#04D9FF");
-        let backgroundColor = p.color("#14143A");
-        
-        let camera;
-        let rows;
-        let cols
-        let flying = 0;
-        let terrain = [];
+        const vanishing = 260;
+        const horizon = 360;
+        const cutoff = 0.5;
+
+        let lineBuffer;
+
+        p.preload = () => {
+            glitchShader = p.loadShader('shaders/background.vert', 'shaders/background.frag');
+        }
 
         p.setup = () => {
             p.createCanvas(p.windowWidth, p.windowHeight, p.WEBGL);
-            camera = p.createCamera();
-            camera.setPosition(0, 600, 120);
-            camera.lookAt(0, 1, 0);
-            let aspectRatio = p.windowWidth / p.windowHeight;
-            p.perspective(p.PI / 4, aspectRatio, 10, 1600);
+            screen = p.createGraphics(p.width, p.height);
 
-            cols = Math.ceil(p.windowWidth / cellSize);
-            rows = Math.ceil(p.windowHeight / cellSize);
-            for (let x = 0; x < cols; x++) {
-                terrain[x] = Array(rows).fill(0);
-            }
-        };
+            setupMoon();
+            setupGrid();
+            p.shader(glitchShader);
+        }
 
         p.windowResized = () => {
             p.resizeCanvas(p.windowWidth, p.windowHeight);
-            if (camera) {
-                camera.setPosition(0, 600, 120);
-                camera.lookAt(0, 1, 0);
-                let aspectRatio = p.windowWidth / p.windowHeight;
-                p.perspective(p.PI / 4, aspectRatio, 10, 1600);
-            }
+            screen = p.createGraphics(p.width, p.height);
+            setupMoon();
+            setupGrid();
         }
 
         p.draw = () => {
-            p.background(backgroundColor);
-            p.translate(-p.windowWidth / 2, 0, 0);
+            updateMoon();
+            updateGrid();
 
-            drawCells();
-            drawCircle();
-        }
+            p.rect(-p.width / 2, -p.height / 2, p.width, p.height);
 
-        const drawCells = () => {
-            p.push();
-            p.stroke(gridLineColor);
-            p.fill(backgroundColor);
-            updateCells();
-            for (let y = 0; y < rows - 1; y++) {
-                p.beginShape(p.TRIANGLE_STRIP);
-                for (let x = 0; x < cols; x++) {
-                    p.vertex(x * cellSize, y * cellSize, terrain[x][y]);
-                    p.vertex(x * cellSize, (y + 1) * cellSize, terrain[x][y + 1]);
-                }
-                p.endShape();
+            screen.fill(p.color("#14143A"))
+            screen.rect(0, horizon, p.width, p.height - 300);
+            screen.stroke(p.color("#04D9FF"));
+            for (let y of lineBuffer) {
+                screen.line(0, y, p.width, y);
             }
-            p.pop();
-        }
-
-        const updateCells = () => {
-            flying -= 0.01;
-            let yOffset = flying;
-            for (let y = 0; y < rows; y++) {
-                let xOffset = 0;
-                for (let x = 0; x < cols; x++) {
-                    terrain[x][y] = p.map(p.noise(xOffset, yOffset), 0, 1, -20, 20);
-                    xOffset += 0.2;
-                }
-                yOffset += 0.2;
+            for (let i = 1; i < 20; i++) {
+                let dx = p.pow(i / 32, 1.5) * 10000;
+                skewLine(dx);
+                skewLine(-dx);
             }
         }
 
-        const drawCircle = () => {
-            p.push();
-            p.translate(p.windowWidth / 2, 0, 0); // Position the circle in 3D space
-            p.rotateY(p.PI / 2);
-            p.rotateX(p.PI / 2);
-            p.noStroke();
-            p.fill(p.color("#ffffff"));
-            p.ellipse(-40, 0, 200, 200, 32);
-            p.pop();
+        const setupMoon = () => {
+            screen.background(p.color("#14143A"));
+            screen.noStroke();
+            screen.fill(p.color("#ffffff"));
+            screen.drawingContext.shadowBlur = 200;
+            for (let i = 40; i <= 80; i += 20) {
+                screen.drawingContext.shadowColor = p.color(160, 215, 225, i);
+                screen.ellipse(p.width / 2, vanishing, 300, 300);
+            }
+            
+            screen.drawingContext.shadowBlur = 0;
+            screen.ellipse(p.width / 2, vanishing, 240, 240);
+        }
+
+        const setupGrid = () => {
+            lineBuffer = [];
+            for (let i = 0; i < 16; i++) {
+                let y = horizon + p.pow(i / 16, 1.5) * 600;
+                lineBuffer.push(y);
+            }
+        }
+
+        const updateMoon = () => {
+            const v = p.noise(p.millis() / 100);
+            glitchShader.setUniform('texture', screen);
+            glitchShader.setUniform('noise', Math.max(p.pow((v - cutoff) * 1 / (1 - cutoff), 2), 0));
+        }
+
+        const updateGrid = () => {
+            lineBuffer = lineBuffer
+                .map((y, i) => y + p.pow(i / 16, 1.5) * 0.8)
+                .filter((y) => y <= p.windowHeight);
+            while (lineBuffer.length < 16) {
+                lineBuffer.unshift(horizon);
+            }
+        }
+
+        const skewLine = (offset) => {
+            let x0 = p.width / 2;
+            let y0 = vanishing;
+            let x1 = x0 + offset;
+            let y1 = p.windowHeight;
+            let dx = x0 - x1;
+            let dy = y0 - y1;
+            let m = dy / dx;
+            let c = p.windowHeight - m * x1;
+            let y2 = horizon
+            let x2 = (y2 - c) / m;
+            screen.line(x1, y1, x2, y2);
         }
     }
 
