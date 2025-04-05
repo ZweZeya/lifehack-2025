@@ -17,7 +17,7 @@ function App() {
                     <Countdown />
                 </section>
 
-                <section>
+                <section className="about">
                     <AboutWindowFrame />
                 </section>
 
