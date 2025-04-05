@@ -16,7 +16,10 @@ function App() {
                 <section>
                     <AboutWindowFrame />
                 </section>
-                <ProblemStatementsTree />
+
+                <section>
+                    <ProblemStatementsTree />
+                </section>
             </div>
         </>
     )

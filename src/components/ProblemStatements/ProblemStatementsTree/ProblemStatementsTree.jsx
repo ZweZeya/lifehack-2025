@@ -1,132 +1,164 @@
 import "./ProblemStatementsTree.scss"
-import { useState, useEffect } from "react"
+import { useState } from "react"
+import { MdOutlineHealthAndSafety } from "react-icons/md";
+import { LuBrain } from "react-icons/lu";
+import { GiTreeBranch } from "react-icons/gi";
+import { motion } from "framer-motion";
 
 const ProblemStatementsTree = () => {
-    const data = {
-        key: "Overarching Theme",
-        label: "Overarching Theme: Empowering Communities",
-        content: "In our increasingly complex world with fast moving changes, it is paramount that our societies become more interconnected and resilient in the face of challenges. Design a hack to help strengthen and empower our community.",
-        children: [
-            {
-                key: "Theme 1",
-                label: "Theme 1: Health and Wellbeing",
-                content: "Harness data‑driven technology to tackle inefficiencies in healthcare that improve community health outcomes.",
-                children: [
-                    {
-                        key: "Theme 1.1",
-                        label: "Placeholder label 1.1",
-                        content: "Placeholder content 1.1",
-                        children: []
-                    },
-                    {
-                        key: "Theme 1.2",
-                        label: "Placeholder label 1.2",
-                        content: "Placeholder content 1.2",
-                        children: []
-                    },
-                    {
-                        key: "Theme 1.3",
-                        label: "Placeholder label 1.3",
-                        content: "Placeholder content 1.3",
-                        children: []
-                    }
-                ]
-            },
-            {
-                key: "Theme 2",
-                label: "Theme 2: Knowledge and Collaboration",
-                content: "Design digital solutions that personalise learning and break barriers so everyone can access knowledge anytime, anywhere.",
-                children: [
-                    {
-                        key: "Theme 2.1",
-                        label: "Placeholder label 2.1",
-                        content: "Placeholder content 2.1",
-                        expandedStates: [],
-                        children: []
-                    },
-                    {
-                        key: "Theme 2.2",
-                        label: "Placeholder label 2.2",
-                        content: "Placeholder content 2.2",
-                        expandedStates: [],
-                        children: []
-                    },
-                    {
-                        key: "Theme 2.3",
-                        label: "Placeholder label 2.3",
-                        content: "Placeholder content 2.3",
-                        expandedStates: [],
-                        children: []
-                    }
-                ]
-            },
-            {
-                key: "Theme 3",
-                label: "Theme 3: Sustainability & Consumption",
-                content: "Create tools that empower consumers with transparent insights, and inspire meaningful behaviour change toward a greener future.",
-                children: [
-                    {
-                        key: "Theme 3.1",
-                        label: "Placeholder label 3.1",
-                        content: "Placeholder content 3.1",
-                        children: []
-                    },
-                    {
-                        key: "Theme 3.2",
-                        label: "Placeholder label 3.2",
-                        content: "Placeholder content 3.2",
-                        children: []
-                    },
-                    {
-                        key: "Theme 3.3",
-                        label: "Placeholder label 3.3",
-                        content: "Placeholder content 3.3",
-                        children: []
-                    }
-                ]
-            }
-        ]
+    const [expanded, setExpanded] = useState(-1)
+
+    const data = [
+        {
+            key: "Theme 1",
+            title: "Health & Wellbeing",
+            content: "Harness data‑driven technology to tackle inefficiencies in healthcare that improve community health outcomes.",
+            icon: MdOutlineHealthAndSafety,
+            color: "#FF00FF",
+            children: [
+                {
+                    key: "Theme 1.1",
+                    title: "Digital Rights Management (DRM)",
+                    content: "DRM utilizes various technologies to safeguard digital content, preventing its unauthorized access and distribution by protecting creators' and distributors' rights.",
+                    children: []
+                },
+                {
+                    key: "Theme 1.2",
+                    title: "Digital Rights Management (DRM)",
+                    content: "DRM utilizes various technologies to safeguard digital content, preventing its unauthorized access and distribution by protecting creators' and distributors' rights.",
+                    children: []
+                },
+                {
+                    key: "Theme 1.3",
+                    title: "Digital Rights Management (DRM)",
+                    content: "DRM utilizes various technologies to safeguard digital content, preventing its unauthorized access and distribution by protecting creators' and distributors' rights.",
+                    children: []
+                }
+            ]
+        },
+        {
+            key: "Theme 2",
+            title: "Knowledge & Collaboration",
+            content: "Design digital solutions that personalise learning and break barriers so everyone can access knowledge anytime, anywhere.",
+            icon: LuBrain,
+            color: "#FFFF00",
+            children: [
+                {
+                    key: "Theme 2.1",
+                    title: "Digital Rights Management (DRM)",
+                    content: "DRM utilizes various technologies to safeguard digital content, preventing its unauthorized access and distribution by protecting creators' and distributors' rights.",
+                    expandedStates: [],
+                    children: []
+                },
+                {
+                    key: "Theme 2.2",
+                    title: "Digital Rights Management (DRM)",
+                    content: "DRM utilizes various technologies to safeguard digital content, preventing its unauthorized access and distribution by protecting creators' and distributors' rights.",
+                    expandedStates: [],
+                    children: []
+                },
+                {
+                    key: "Theme 2.3",
+                    title: "Digital Rights Management (DRM)",
+                    content: "DRM utilizes various technologies to safeguard digital content, preventing its unauthorized access and distribution by protecting creators' and distributors' rights.",
+                    expandedStates: [],
+                    children: []
+                }
+            ]
+        },
+        {
+            key: "Theme 3",
+            title: "Sustainability & Consumption",
+            content: "Create tools that empower consumers with transparent insights, and inspire meaningful behaviour change toward a greener future.",
+            icon: GiTreeBranch,
+            color: "#00FFFF",
+            children: [
+                {
+                    key: "Theme 3.1",
+                    title: "Digital Rights Management (DRM)",
+                    content: "DRM utilizes various technologies to safeguard digital content, preventing its unauthorized access and distribution by protecting creators' and distributors' rights.",
+                    children: []
+                },
+                {
+                    key: "Theme 3.2",
+                    title: "Digital Rights Management (DRM)",
+                    content: "DRM utilizes various technologies to safeguard digital content, preventing its unauthorized access and distribution by protecting creators' and distributors' rights.",
+                    children: []
+                },
+                {
+                    key: "Theme 3.3",
+                    title: "Digital Rights Management (DRM)",
+                    content: "DRM utilizes various technologies to safeguard digital content, preventing its unauthorized access and distribution by protecting creators' and distributors' rights.",
+                    children: []
+                }
+            ]
+        }
+    ]
+
+    const handleClick = (idx) => {
+        if (expanded == idx) {
+            setExpanded(-1)
+        } else {
+            setExpanded(idx)
+        }
     }
 
     return (
-        <div>
-            <TreeNode data={data} isExpanded={true} />
+        <div className="problem-statements-main-container">
+            <div className="main-theme-container">
+                <h2>Overarching Theme: Empowering Communities</h2>
+                <p>In our increasingly complex world with fast moving changes, it is paramount that our societies become more interconnected and resilient in the face of challenges. Design a hack to help strengthen and empower our community.</p>
+            </div>
+            <div className="themes-layout">
+                {data.map((e, i) => <ThemeCard key={e.key} data={e} onClick={() => handleClick(i)} isExpanded={expanded == i} />)}
+            </div>
         </div>
     )
 }
 
-const TreeNode = (props) => {
-    const [expandedStates, setExpandedStates] = useState([]);
-
-    const { data, isExpanded } = props
-
-    useEffect(() => {
-        setExpandedStates(data.children.map(() => false))
-    }, [])
-
-    const handleClick = (index) => {
-        if (expandedStates[index]) return
-        setExpandedStates(curr => curr.map((v, i) => i == index ? true : false))
+const ThemeCard = (props) => {
+    const { data, onClick, isExpanded } = props
+    const animate = {
+        layout: "position",
+        animate: {opacity: 1},
+        transition: {delay: 0.3},
+        initial: {opacity: 0}
     }
+    return (
+        <motion.div 
+            className="theme-card-container" 
+            style={{border: `2px solid ${data.color}`}} 
+            onClick={onClick} 
+            transition={{duration: 0.17}}
+            layout
+        >
+            <motion.div layout="position" className="theme-card-visible-container">
+                <motion.div layout="position" className="theme-card-icon" style={{backgroundColor: data.color}}>
+                    <data.icon size={60} />
+                </motion.div>
+                <motion.div layout="position">
+                    <motion.h3 layout="position">{data.title}</motion.h3>
+                    <motion.p layout="position" className="theme-card-content">{data.content}</motion.p>
+                </motion.div>
+            </motion.div>
+            {isExpanded && 
+                <motion.div {... animate} className="subthemes-layout">
+                    <hr style={{border: `1px solid ${data.color}`}}/>
+                    {data.children.map(e => <SubThemeCard key={e.key} data={e} />)}
+                </motion.div>
+            }
+        </motion.div>
+    )
+}
+
+const SubThemeCard = (props) => {
+    const { data } = props
 
     return (
-        <div>
-            <div className="node-container" onClick={() => {}}>
-                <p>{data.label}</p>
-                <p>{data.content}</p>
-            </div>
-            { isExpanded && expandedStates.length > 0 &&
-              <div>
-                <ul className="child-nodes-container">
-                    { data.children.map((v, i) => 
-                        <li key={v.key} onClick={() => handleClick(i)}>
-                            <TreeNode data={v} isExpanded={expandedStates[i]} />
-                        </li>) 
-                    }
-                </ul>
-              </div>
-            }
-        </div>
+        <motion.div>
+            <motion.h4>{data.title}</motion.h4>
+            <motion.p className="subtheme-card-content">{data.content}</motion.p>
+        </motion.div>
     )
 }
 

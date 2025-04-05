@@ -1,30 +1,82 @@
-$purple: #7743DB;
-
-.node-container {
-    background-color: $purple;
+.problem-statements-main-container {
+    margin: 2rem 8rem
 }
 
-.child-nodes-container {
-    list-style: none;
-}
-
-.node-container {
+.main-theme-container {
     position: relative;
     padding: 12px 16px;
     margin: 6px 0;
-    background: #222; /* Dark cyberpunk background */
-    border: 2px solid #0ff; /* Neon cyan border */
-    border-radius: 6px;
-    box-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
-    cursor: pointer;
+    background: #222; /* solid inner background */
+    border-radius: 8px;
+    z-index: 0;
     transition: all 0.2s ease-in-out;
 }
+  
+.main-theme-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 2px; /* border thickness */
+    border-radius: inherit;
+    background: linear-gradient(135deg, cyan, magenta, yellow);
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+}
 
-.node-container:hover {
+.themes-layout  {
+    display: flex;
+    flex-direction: column;
+}
+
+.theme-card-container  {
+    position: relative;
+    padding: 12px 16px;
+    margin: 6px 0;
+    background: #222; 
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.theme-card-container:hover {
     background: #333;
     box-shadow: 0 0 12px rgba(0, 255, 255, 0.9);
 }
 
-.node-container:active {
-    transform: scale(0.95);
+.theme-card-visible-container {
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+}
+
+.theme-card-icon  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    color: #222;
+    padding: 0.3rem;
+}
+
+.theme-card-content  {
+    font-size: 14px;
+}
+
+.theme-card-expand-button:hover {
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+}
+
+.subthemes-layout {
+    text-align: left;
+}
+
+.subtheme-card-content {
+    font-size: 14px;
 }
