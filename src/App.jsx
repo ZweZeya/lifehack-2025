@@ -4,6 +4,7 @@ import Background from './components/Background/Background';
 import Countdown from './components/Countdown/Countdown';
 import Hero from './components/Hero/Hero';
 import ProblemStatementsTree from './components/ProblemStatements/ProblemStatementsTree/ProblemStatementsTree';
+import Timeline from './components/Timeline/Timeline';
 
 function App() {
     return (
@@ -23,6 +24,10 @@ function App() {
 
                 <section>
                     <ProblemStatementsTree />
+                </section>
+
+                <section>
+                    <Timeline />
                 </section>
             </div>
         </>
