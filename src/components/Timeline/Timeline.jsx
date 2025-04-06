@@ -1,9 +1,9 @@
-import "react-vertical-timeline-component/style.min.css"
 import { FaMedal } from "react-icons/fa"
 import { HiComputerDesktop } from "react-icons/hi2"
 import { LuClipboardPen } from "react-icons/lu"
 import { MdOutlineCelebration } from "react-icons/md"
 import "./Timeline.scss"
+import Header from "../common/Header/Header"
 
 const Timeline = () => {
 
@@ -37,7 +37,7 @@ const Timeline = () => {
 
     return (
         <div className="timeline-container">
-            <h1 className="timeline-header">Event Timeline</h1>
+            <Header className="timeline-header">Event Timeline</Header>
             <div className="timeline-items">
                 {data.map(e => <TimelineElement key={e.title} data={e} />)}
             </div>

@@ -4,6 +4,7 @@ import { MdOutlineHealthAndSafety } from "react-icons/md";
 import { LuBrain } from "react-icons/lu";
 import { GiTreeBranch } from "react-icons/gi";
 import { motion } from "framer-motion";
+import Header from "../../common/Header/Header";
 
 const ProblemStatementsTree = () => {
     const [expanded, setExpanded] = useState(-1)
@@ -105,6 +106,7 @@ const ProblemStatementsTree = () => {
 
     return (
         <div className="problem-statements-main-container">
+            <Header>Problem Statements</Header>
             <div className="main-theme-container">
                 <h2>Overarching Theme: Empowering Communities</h2>
                 <p>In our increasingly complex world with fast moving changes, it is paramount that our societies become more interconnected and resilient in the face of challenges. Design a hack to help strengthen and empower our community.</p>

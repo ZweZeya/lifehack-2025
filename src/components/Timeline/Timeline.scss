@@ -4,11 +4,12 @@ $secondary-color2: cyan;
 
 .timeline-header {
     color: $primary-color;
-    text-decoration: underline;
 }
 
 .timeline-container {
 	margin: 2rem 8rem;
+    background: #222;
+    border-radius: 8px;
 }
 
 .timeline-items{
@@ -44,7 +45,7 @@ $secondary-color2: cyan;
 .timeline-dot{
 	height: 40px;
 	width: 40px;
-	background-color: $secondary-color2;
+	background-color: $primary-color;
 	position: absolute;
 	left: calc(50% - 1.05rem);
 	border-radius: 50%;
@@ -89,6 +90,12 @@ $secondary-color2: cyan;
 		padding-left: 37px;
 	}
 	.timeline-dot{
-		left: 0;
+        height: 32px;
+	    width: 32px;
+		left: 0.27rem;
 	}
+    .timeline-date{
+        font-size: 15px;
+        margin-left: 0.4rem;
+    }
 }

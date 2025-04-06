@@ -1,0 +1,10 @@
+.custom-header {
+    text-decoration: underline;
+}
+
+/* responsive */
+@media(max-width: 767px){
+	.custom-header {
+        font-size: 25px;
+    }
+}
