@@ -14,7 +14,7 @@ const ProblemStatementsTree = () => {
         {
             key: "Theme 1",
             title: "Health & Wellbeing",
-            content: "Harness data‑driven technology to tackle inefficiencies in healthcare that improve community health outcomes.",
+            content: "Harness data-driven technology to tackle inefficiencies in healthcare that improve community health outcomes.",
             icon: MdOutlineHealthAndSafety,
             color: "#FF00FF",
             children: [
