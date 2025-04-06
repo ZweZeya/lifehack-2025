@@ -4,6 +4,7 @@ import "leaflet/dist/leaflet.css";
 
 import WindowFrame from "../../common/WindowFrame/WindowFrame"
 import "./MapWindowFrame.scss"
+import Header from "../../common/Header/Header";
 
 const MapWindowFrame = () => {
     const position = [1.294872, 103.7737049];
@@ -12,7 +13,7 @@ const MapWindowFrame = () => {
     const url = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
 
     return (
-        <WindowFrame className="map">
+        <WindowFrame className="map" title={<Header>Venue</Header>}>
             <MapContainer center={position} zoom={zoom}>
                 <TileLayer attribution={attributon} url={url} />
                 <Marker position={position}>
