@@ -47,7 +47,7 @@ const Pedestal = (props) => {
             <div className="pedestal">
                 <div className="pedestal-info">
                     <p className="prize-title">{title}</p>
-                    <p classNameclass="prize-amount">{prize}</p>
+                    <p className="prize-amount">{prize}</p>
                 </div>
             </div>
         </div>

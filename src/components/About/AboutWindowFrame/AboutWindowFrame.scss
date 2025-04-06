@@ -1,3 +1,9 @@
 .about-container {
-  margin: 2rem 8rem;
+  margin: 2rem 12rem;
+}
+
+@media (max-width: 767px) {
+  .about-container {
+    margin: 2rem 8rem;
+  }
 }

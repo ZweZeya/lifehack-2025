@@ -1,8 +1,8 @@
 import "./ProblemStatementsTree.scss"
 import { useState } from "react"
 import { MdOutlineHealthAndSafety } from "react-icons/md";
-import { LuBrain } from "react-icons/lu";
-import { GiTreeBranch } from "react-icons/gi";
+import { PiBrain } from "react-icons/pi";
+import { RiTreeLine } from "react-icons/ri";
 import { motion } from "framer-motion";
 import Header from "../../common/Header/Header";
 import EntranceAnimation from "../../common/EntranceAnimation/EntranceAnimation";
@@ -16,7 +16,7 @@ const ProblemStatementsTree = () => {
             title: "Health & Wellbeing",
             content: "Harness data-driven technology to tackle inefficiencies in healthcare that improve community health outcomes.",
             icon: MdOutlineHealthAndSafety,
-            color: "#FF00FF",
+            color: "#ff00cc",
             children: [
                 {
                     key: "Theme 1.1",
@@ -42,8 +42,8 @@ const ProblemStatementsTree = () => {
             key: "Theme 2",
             title: "Knowledge & Collaboration",
             content: "Design digital solutions that personalise learning and break barriers so everyone can access knowledge anytime, anywhere.",
-            icon: LuBrain,
-            color: "#FFFF00",
+            icon: PiBrain,
+            color: "#00aaff",
             children: [
                 {
                     key: "Theme 2.1",
@@ -72,8 +72,8 @@ const ProblemStatementsTree = () => {
             key: "Theme 3",
             title: "Sustainability & Consumption",
             content: "Create tools that empower consumers with transparent insights, and inspire meaningful behaviour change toward a greener future.",
-            icon: GiTreeBranch,
-            color: "#00FFFF",
+            icon: RiTreeLine,
+            color: "#00ffaa",
             children: [
                 {
                     key: "Theme 3.1",
