@@ -1,29 +1,26 @@
-$glitch-pink: #ff00ff;
-$glitch-yellow: yellow;
-$glitch-blue: cyan;
-$glitch-duration: .2s;
+@use "../../../styles/variables" as *;
 
 .window-frame-container {
-    margin: 2rem 8rem;
-    padding: 1rem;
-    border: 0.125rem solid white; 
-    border-radius: 0.5rem; 
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
-    box-shadow: 0 0 0.625rem white; 
-    text-shadow: 0 0 0.3125rem white;
-    width: fit-content;
-    display: inline-block;
-    transition:all .1s;
-  }
+  padding: 1rem;
+  border: 0.125rem solid white;
+  border-radius: 0.5rem;
+  background-color: $background-color;
+  color: white;
+  box-shadow: 0 0 0.625rem white;
+  text-shadow: 0 0 0.3125rem white;
+  width: fit-content;
+  display: inline-block;
+  transition: all 0.1s;
+  transition: background-color 0.2s ease-in;
+}
 
 .window-top-bar {
-    display: flex;
-    flex-direction: row;
-    padding: 0.5rem 0.5rem 0rem 0.5rem;
-    justify-content: center;
-    margin: 0;
-    position: relative;
+  display: flex;
+  flex-direction: row;
+  padding: 0.5rem 0.5rem 0rem 0.5rem;
+  justify-content: center;
+  margin: 0;
+  position: relative;
 }
 
 .window-top-bar > h1 {
@@ -38,49 +35,65 @@ $glitch-duration: .2s;
 
 .close-btn {
   position: absolute;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    border: 2px solid transparent; 
-    border-radius: 4px; 
-    transition: border-color 0.3s ease-in-out;
-    padding: 0.2rem;
-    width: 25px;
-    height: 25px;
-    top: 0rem;
-    right: 0rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  transition: border-color 0.3s ease-in-out;
+  padding: 0.2rem;
+  width: 25px;
+  height: 25px;
+  top: 0rem;
+  right: 0rem;
 }
 
 .close-btn:hover {
-    border-color: white; 
-}
-
-.close-icon {
-    margin: 0
+  border-color: white;
 }
 
 .content-container {
-    margin: 0;
-    padding: 0rem 0.5rem 0.5rem 0.5rem;
+  position: relative;
+  margin: 0;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
 }
 
-.containerglitch1 {
-    animation:glitch1 $glitch-duration;
+.close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.2rem;
+  display: inline-flex;
+  align-items: center;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
 }
 
-.containerglitch2 {
-    animation:glitch2 $glitch-duration;
+.close-btn:hover {
+  border-color: white;
+  box-shadow: 0 0 0.625rem white;
+  text-shadow: 0 0 0.3125rem white;
 }
 
-.containerglitch3 {
-    animation:glitch3 $glitch-duration;
+.close-icon {
+  margin: 0;
 }
 
-.containerglitch4 {
-    animation:glitch4 $glitch-duration;
+.glitch1 {
+  animation: glitch1 $glitch-duration;
+}
+.glitch2 {
+  animation: glitch2 $glitch-duration;
+}
+.glitch3 {
+  animation: glitch3 $glitch-duration;
+}
+.glitch4 {
+  animation: glitch4 $glitch-duration;
 }
 
-/* Glitch effects */
 .glitch1 div {
   animation: glitch1 $glitch-duration;
 }
@@ -99,95 +112,85 @@ $glitch-duration: .2s;
 
 /* Glitch animations */
 @keyframes glitch1 {
-  0% { box-shadow: none; }
-  20% { box-shadow: 15px 10px 0 0 $glitch-yellow, 5px 9px 0 0 $glitch-pink; }
-  50% { box-shadow: 12px 1px 0 0 $glitch-yellow, -5px 6px 0 0 $glitch-blue; }
-  60% { box-shadow: -3px -10px 0 0 $glitch-yellow, 1px 12px 0 0 $glitch-blue; }
-  75% { box-shadow: 10px 11px 0 0 $glitch-pink, 4px -8px 0 0 $glitch-blue; }
-  100% { box-shadow: none; }
+  0% {
+    box-shadow: none;
+  }
+  20% {
+    box-shadow: 15px 10px 0 0 $glitch-yellow, 5px 9px 0 0 $glitch-pink;
+  }
+  50% {
+    box-shadow: 12px 1px 0 0 $glitch-yellow, -5px 6px 0 0 $glitch-blue;
+  }
+  60% {
+    box-shadow: -3px -10px 0 0 $glitch-yellow, 1px 12px 0 0 $glitch-blue;
+  }
+  75% {
+    box-shadow: 10px 11px 0 0 $glitch-pink, 4px -8px 0 0 $glitch-blue;
+  }
+  100% {
+    box-shadow: none;
+  }
 }
 
 @keyframes glitch2 {
-  0% { box-shadow: none; }
-  30% { box-shadow: 15px 10px 0 0 $glitch-yellow, 5px 9px 0 0 $glitch-pink; }
-  40% { box-shadow: 12px 1px 0 0 $glitch-yellow, -5px 6px 0 0 $glitch-blue; }
-  60% { box-shadow: -3px -10px 0 0 $glitch-yellow, 1px 12px 0 0 $glitch-blue; }
-  85% { box-shadow: 10px 11px 0 0 $glitch-pink, 4px -8px 0 0 $glitch-blue; }
-  100% { box-shadow: none; }
+  0% {
+    box-shadow: none;
+  }
+  30% {
+    box-shadow: 15px 10px 0 0 $glitch-yellow, 5px 9px 0 0 $glitch-pink;
+  }
+  40% {
+    box-shadow: 12px 1px 0 0 $glitch-yellow, -5px 6px 0 0 $glitch-blue;
+  }
+  60% {
+    box-shadow: -3px -10px 0 0 $glitch-yellow, 1px 12px 0 0 $glitch-blue;
+  }
+  85% {
+    box-shadow: 10px 11px 0 0 $glitch-pink, 4px -8px 0 0 $glitch-blue;
+  }
+  100% {
+    box-shadow: none;
+  }
 }
 
 @keyframes glitch3 {
-  0% { box-shadow: none; }
-  10% { box-shadow: 3px 3px 0 0 $glitch-blue, -2px 5px 0 0 $glitch-pink; }
-  30% { box-shadow: 6px 1px 0 0 $glitch-yellow, -12px 5px 0 0 $glitch-blue; }
-  60% { box-shadow: 10px -3px 0 0 $glitch-yellow, 7px 4px 0 0 $glitch-blue; }
-  70% { box-shadow: -14px -5px 0 0 $glitch-yellow, 2px 3px 0 0 $glitch-blue; }
-  100% { box-shadow: none; }
+  0% {
+    box-shadow: none;
+  }
+  10% {
+    box-shadow: 3px 3px 0 0 $glitch-blue, -2px 5px 0 0 $glitch-pink;
+  }
+  30% {
+    box-shadow: 6px 1px 0 0 $glitch-yellow, -12px 5px 0 0 $glitch-blue;
+  }
+  60% {
+    box-shadow: 10px -3px 0 0 $glitch-yellow, 7px 4px 0 0 $glitch-blue;
+  }
+  70% {
+    box-shadow: -14px -5px 0 0 $glitch-yellow, 2px 3px 0 0 $glitch-blue;
+  }
+  100% {
+    box-shadow: none;
+  }
 }
 
 @keyframes glitch4 {
-  0% { box-shadow: none; }
-  25% { box-shadow: 10px -3px 0 0 $glitch-yellow, 7px 1px 0 0 $glitch-blue; }
-  40% { box-shadow: -13px 6px 0 0 $glitch-yellow, 6px 9px 0 0 $glitch-blue; }
-  65% { box-shadow: -3px 14px 0 0 $glitch-pink, 5px -3px 0 0 $glitch-blue; }
-  90% { box-shadow: -8px 4px 0 0 $glitch-yellow, 14px -5px 0 0 $glitch-blue; }
-  100% { box-shadow: none; }
-}
-
-.background {
-    background-color: blue;
-}
-
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-}
-
-/* Modal Content */
-.modal-content {
-  background: #fff;
-  border-radius: 8px;
-  width: 90%;
-  max-width: 500px;
-  position: relative;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-/* Modal Header */
-.modal-header {
-  position: relative;
-  padding: 16px;
-  border-bottom: 1px solid #ddd;
-}
-
-/* Centered Modal Title */
-.modal-title {
-  margin: 0;
-  text-align: center;
-color: #222;
-}
-
-/* Close Button (Top Right) */
-.modal-close {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  background: transparent;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  line-height: 1;
-}
-
-/* Modal Body */
-.modal-body {
-  padding: 16px;
+  0% {
+    box-shadow: none;
+  }
+  25% {
+    box-shadow: 10px -3px 0 0 $glitch-yellow, 7px 1px 0 0 $glitch-blue;
+  }
+  40% {
+    box-shadow: -13px 6px 0 0 $glitch-yellow, 6px 9px 0 0 $glitch-blue;
+  }
+  65% {
+    box-shadow: -3px 14px 0 0 $glitch-pink, 5px -3px 0 0 $glitch-blue;
+  }
+  90% {
+    box-shadow: -8px 4px 0 0 $glitch-yellow, 14px -5px 0 0 $glitch-blue;
+  }
+  100% {
+    box-shadow: none;
+  }
 }

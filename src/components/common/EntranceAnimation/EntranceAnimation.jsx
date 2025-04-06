@@ -18,8 +18,8 @@ const EntranceAnimation = (props) => {
         <motion.div 
           style={{padding: 0, margin: 0}}
           variants={{
-            hidden: { opacity: 0, y: 75 },
-            visible: { opacity: 0.75, y: 0 }
+            hidden: { opacity: 0, y: 1 },
+            visible: { opacity: 1, y: 0 }
           }}
           initial="hidden"
           animate={control}

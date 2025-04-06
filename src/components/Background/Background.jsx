@@ -60,7 +60,7 @@ const Background = () => {
         const setupMoon = () => {
             screen.background(p.color("#14143A"));
             screen.noStroke();
-            screen.fill(p.color("#ffffff"));
+            screen.fill(p.color("#cccccc"));
             screen.drawingContext.shadowBlur = 200;
             for (let i = 40; i <= 80; i += 20) {
                 screen.drawingContext.shadowColor = p.color(160, 215, 225, i);

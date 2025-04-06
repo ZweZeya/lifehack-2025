@@ -3,31 +3,20 @@ import { AiOutlineClose } from "react-icons/ai";
 import { useState } from "react";
 
 const WindowFrame = (props) => {
-    const {title, children} = props
-
-    const glitches = [
-        "",
-        "glitch1",
-        "glitch2",
-        "glitch3",
-        "glitch4",
-    ]
-    const [glitchType, setGlitchType] = useState(0);
+    const glitches = ["glitch1", "glitch2", "glitch3", "glitch4"];
+    const [glitchIndex, setGlitchType] = useState(0);
 
     const handleClick = () => {
-        setGlitchType((glitchType + 1) % 4)
+        setGlitchType((glitchIndex + 1) % glitches.length);
     }
 
     return (
-        <div className={`window-frame-container ${glitches[glitchType + 1]}`}>
-            <div className="window-top-bar">
-                { title }
+        <div className={`window-frame-container ${props.className} ${glitches[glitchIndex]}`}>
+            <div className="content-container">
                 <div className="close-btn" onClick={handleClick}>
                     <AiOutlineClose size={25} className="close-icon" />
                 </div>
-            </div>
-            <div className="content-container">
-                {children}
+                {props.children}
             </div>
         </div>
     )

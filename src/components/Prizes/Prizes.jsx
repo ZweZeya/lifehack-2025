@@ -65,8 +65,6 @@ const Medal = () => {
         return () => clearInterval(timer)
     }, [])
 
-    console.log(isFlipped)
-
     return (
         <div className="medal-container">
             <div className={`medal-flipper  ${isFlipped ? "medal-flip-animation" : ""}`}>
