@@ -13,7 +13,8 @@ const MapWindowFrame = () => {
     const url = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
 
     return (
-        <WindowFrame className="map" title={<Header>Venue</Header>}>
+        <WindowFrame className="map">
+            <Header className="map-header">Venue</Header>
             <MapContainer center={position} zoom={zoom}>
                 <TileLayer attribution={attributon} url={url} />
                 <Marker position={position}>

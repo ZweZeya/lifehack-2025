@@ -194,3 +194,9 @@
     box-shadow: none;
   }
 }
+
+@media (max-width: 767px) {
+  .window-frame-container {
+    margin: 2rem 2rem;
+  }
+}

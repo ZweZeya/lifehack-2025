@@ -3,3 +3,13 @@
   height: 50vh;
   min-width: 360px;
 }
+
+.map-header {
+  margin: 0rem 0rem 1rem 0rem;
+}
+
+@media (max-width: 767px) {
+  .leaflet-container {
+    min-width: 270px;
+  }
+}

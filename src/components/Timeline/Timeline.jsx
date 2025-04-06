@@ -23,7 +23,7 @@ const Timeline = () => {
         },
         {
             date: "29 May",
-            title: "Opening Ceremony and Activities",
+            title: "Opening Ceremony & Activities",
             content: "Come down and join us in games, workshops, and lucky draws. Make new friends, win prizes and start hacking on a high note.",
             icon: MdOutlineCelebration,
             iconColor: "#187bcd",
@@ -61,7 +61,7 @@ const Timeline = () => {
                         >
                             <WindowFrame className="tmp">
                                 <div>
-                                    <h3>{event.title}</h3>
+                                    <h3 className="timeline-event-header">{event.title}</h3>
                                     <p>{event.content}</p>
                                 </div>
                             </WindowFrame>

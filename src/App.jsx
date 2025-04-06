@@ -8,6 +8,7 @@ import ProblemStatementsTree from './components/ProblemStatements/ProblemStateme
 import Prizes from './components/Prizes/Prizes';
 import Register from './components/Register/Register';
 import Timeline from './components/Timeline/Timeline';
+import ContactUs from './components/ContactUs/ContactUs';
 
 import './App.css';
 
@@ -56,6 +57,12 @@ function App() {
                 <EntranceAnimation>
                     <section>
                         <MapWindowFrame />
+                    </section>
+                </EntranceAnimation>
+
+                <EntranceAnimation>
+                    <section>
+                        <ContactUs />
                     </section>
                 </EntranceAnimation>
             </div>

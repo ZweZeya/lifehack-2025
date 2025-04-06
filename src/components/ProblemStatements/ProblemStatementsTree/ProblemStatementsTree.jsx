@@ -133,7 +133,7 @@ const ThemeCard = (props) => {
                 className="theme-card-container" 
                 style={{border: `2px solid ${data.color}`}} 
                 onClick={onClick} 
-                transition={{duration: 0.17}}
+                transition={{duration: 0.17, bounce: 0, type: "spring"}}
                 layout
             >
                 <motion.div layout="position" className="theme-card-visible-container">

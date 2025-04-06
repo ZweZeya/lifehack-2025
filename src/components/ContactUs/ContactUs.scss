@@ -1,0 +1,53 @@
+.contacts-main-container {
+    width: 100%;
+    background: #222;
+    padding: 1rem 0 1.7em 0;
+    margin-top: 4rem;
+    position: relative;
+}
+
+.contacts-main-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ff00cc, #00aaff, #ff00cc);
+    background-size: 200% 100%;
+    animation: gradient-shift 3s linear infinite;
+    z-index: 3;
+}
+
+.contacts-header {
+    margin: 0 0 1.2rem 0;
+    font-size: 30px;
+}
+
+.contacts-items-layout {
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-item-container {
+    cursor: pointer;
+    color: white;
+}
+
+.contact-item-icon {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-item-container:hover .contact-item-icon {
+    transform: scale(1.4);
+}
+
+@media (max-width: 767px) {
+    .contacts-header {
+        font-size: 20px;
+    }
+}

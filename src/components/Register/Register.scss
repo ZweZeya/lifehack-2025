@@ -35,3 +35,10 @@
 .register-button:hover {
     transform: scale(1.05);
 }
+
+@media (max-width: 767px) {
+    .register-button {
+        font-size: 2rem;
+        padding: 12px 24px;
+    }
+  }

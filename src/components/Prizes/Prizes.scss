@@ -23,11 +23,7 @@
   z-index: 1;
 }
 
-@media (max-width: 767px) {
-  .prizes-main-container {
-    margin: 2rem 8rem;
-  }
-}
+
 
 @keyframes gradient-shift {
   0% {
@@ -242,8 +238,11 @@
   font-size: 1.2rem;
 }
 
-/* Responsive styles */
-@media (max-width: 600px) {
+@media (max-width: 767px) {
+  .prizes-main-container {
+    margin: 2rem 1rem;
+  }
+
   .prizes-container {
     flex-direction: column;
     align-items: center;
@@ -258,7 +257,15 @@
     height: 100px !important;
   }
 
-  .reflection {
-    display: none;
+  .finalist-text {
+    font-size: 0.85rem;
+  }
+
+  .prizes-special-category {
+    font-size: 0.9rem;
+  }
+  
+  .prizes-lucky-draw {
+    font-size: 0.9rem;
   }
 }
