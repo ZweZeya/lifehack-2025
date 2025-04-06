@@ -8,6 +8,7 @@ import Timeline from './components/Timeline/Timeline';
 
 import './App.css';
 import Prizes from './components/Prizes/Prizes';
+import Register from './components/Register/Register';
 
 function App() {
     return (
@@ -35,6 +36,10 @@ function App() {
 
                 <section>
                     <Prizes />
+                </section>
+
+                <section>
+                    <Register />
                 </section>
 
                 <section>
