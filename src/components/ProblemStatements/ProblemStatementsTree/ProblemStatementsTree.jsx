@@ -5,6 +5,7 @@ import { LuBrain } from "react-icons/lu";
 import { GiTreeBranch } from "react-icons/gi";
 import { motion } from "framer-motion";
 import Header from "../../common/Header/Header";
+import EntranceAnimation from "../../common/EntranceAnimation/EntranceAnimation";
 
 const ProblemStatementsTree = () => {
     const [expanded, setExpanded] = useState(-1)
@@ -127,29 +128,31 @@ const ThemeCard = (props) => {
         initial: {opacity: 0}
     }
     return (
-        <motion.div 
-            className="theme-card-container" 
-            style={{border: `2px solid ${data.color}`}} 
-            onClick={onClick} 
-            transition={{duration: 0.17}}
-            layout
-        >
-            <motion.div layout="position" className="theme-card-visible-container">
-                <motion.div layout="position" className="theme-card-icon" style={{backgroundColor: data.color}}>
-                    <data.icon size={60} />
+        <EntranceAnimation>
+            <motion.div 
+                className="theme-card-container" 
+                style={{border: `2px solid ${data.color}`}} 
+                onClick={onClick} 
+                transition={{duration: 0.17}}
+                layout
+            >
+                <motion.div layout="position" className="theme-card-visible-container">
+                    <motion.div layout="position" className="theme-card-icon" style={{backgroundColor: data.color}}>
+                        <data.icon size={60} />
+                    </motion.div>
+                    <motion.div layout="position">
+                        <motion.h3 layout="position">{data.title}</motion.h3>
+                        <motion.p layout="position" className="theme-card-content">{data.content}</motion.p>
+                    </motion.div>
                 </motion.div>
-                <motion.div layout="position">
-                    <motion.h3 layout="position">{data.title}</motion.h3>
-                    <motion.p layout="position" className="theme-card-content">{data.content}</motion.p>
-                </motion.div>
+                {isExpanded && 
+                    <motion.div {... animate} className="subthemes-layout">
+                        <hr style={{border: `1px solid ${data.color}`}}/>
+                        {data.children.map(e => <SubThemeCard key={e.key} data={e} />)}
+                    </motion.div>
+                }
             </motion.div>
-            {isExpanded && 
-                <motion.div {... animate} className="subthemes-layout">
-                    <hr style={{border: `1px solid ${data.color}`}}/>
-                    {data.children.map(e => <SubThemeCard key={e.key} data={e} />)}
-                </motion.div>
-            }
-        </motion.div>
+        </EntranceAnimation>
     )
 }
 

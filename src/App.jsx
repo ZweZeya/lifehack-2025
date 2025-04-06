@@ -9,6 +9,7 @@ import Timeline from './components/Timeline/Timeline';
 import './App.css';
 import Prizes from './components/Prizes/Prizes';
 import Register from './components/Register/Register';
+import EntranceAnimation from './components/common/EntranceAnimation/EntranceAnimation';
 
 function App() {
     return (
@@ -21,30 +22,42 @@ function App() {
                 <section>
                     <Countdown />
                 </section>
+                
+                <EntranceAnimation>
+                    <section className="about">
+                        <AboutWindowFrame />
+                    </section>
+                </EntranceAnimation>
 
-                <section className="about">
-                    <AboutWindowFrame />
-                </section>
+                <EntranceAnimation>
+                    <section>
+                        <ProblemStatementsTree />
+                    </section>
+                </EntranceAnimation>
 
-                <section>
-                    <ProblemStatementsTree />
-                </section>
+                <EntranceAnimation>
+                    <section>
+                        <Timeline />
+                    </section>
+                </EntranceAnimation>
 
-                <section>
-                    <Timeline />
-                </section>
+                <EntranceAnimation>
+                    <section>
+                        <Prizes />
+                    </section>
+                </EntranceAnimation>
 
-                <section>
-                    <Prizes />
-                </section>
+                <EntranceAnimation>
+                    <section>
+                        <Register />
+                    </section>
+                </EntranceAnimation>
 
-                <section>
-                    <Register />
-                </section>
-
-                <section>
-                    <MapWindowFrame />
-                </section>
+                <EntranceAnimation>
+                    <section>
+                        <MapWindowFrame />
+                    </section>
+                </EntranceAnimation>
             </div>
         </>
     )
