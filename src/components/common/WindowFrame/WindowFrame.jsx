@@ -3,6 +3,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import { useState } from "react";
 
 const WindowFrame = (props) => {
+    
     const glitches = [
         "",
         "glitch1",

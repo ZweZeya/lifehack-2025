@@ -7,6 +7,7 @@ import ProblemStatementsTree from './components/ProblemStatements/ProblemStateme
 import Timeline from './components/Timeline/Timeline';
 
 import './App.css';
+import Prizes from './components/Prizes/Prizes';
 
 function App() {
     return (
@@ -30,6 +31,10 @@ function App() {
 
                 <section>
                     <Timeline />
+                </section>
+
+                <section>
+                    <Prizes />
                 </section>
 
                 <section>

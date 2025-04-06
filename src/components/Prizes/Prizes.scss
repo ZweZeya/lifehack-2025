@@ -1,0 +1,246 @@
+.prizes-main-container {
+    // width: 100%;
+    // max-width: 800px;
+    background-color: #222;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+    margin: 2rem 8rem
+}
+  
+.prizes-main-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ff00cc, #00aaff, #ff00cc);
+    background-size: 200% 100%;
+    animation: gradient-shift 3s linear infinite;
+    z-index: 1;
+}
+  
+@keyframes gradient-shift {
+    0% { background-position: 0% 0; }
+    100% { background-position: 200% 0; }
+}
+  
+
+.prizes-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 7rem;
+    margin-bottom: 30px;
+    position: relative;
+}
+  
+.prize {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+  
+.medal-container {
+    width: 60px;
+    height: 60px;
+    perspective: 1000px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    z-index: 2;
+}
+  
+.medal-flipper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.medal-flip-animation {
+    transform: rotateY(180deg);
+}
+
+/* Medal front and back sides */
+.medal-front, .medal-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.medal-back {
+    transform: rotateY(180deg);
+}
+
+.pedestal {
+    width: 120px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+  
+.prize-title {
+    color: white;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+  
+.prize-amount {
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 1rem;
+}
+  
+/* First place styles */
+.first-place .medal-front, .first-place .medal-back {
+    background: linear-gradient(135deg, #ff00cc, #9933ff);
+}
+
+.first-place .medal-container {
+    transform: scale(1.2);
+}
+
+.first-place .position::after {
+    background: #ff00cc;
+}
+
+.first-place .position {
+    font-size: 2.2rem;
+}
+
+.first-place .pedestal {
+    height: 160px;
+    background: linear-gradient(to bottom, #ff00cc, #9933ff);
+}
+
+.first-place .prize-amount {
+    background: linear-gradient(to right, #00aaff, #ff00cc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.first-place .reflection {
+    width: 120px;
+    height: 160px;
+    background: linear-gradient(to top, #ff00cc, #9933ff);
+    left: 50%;
+    transform: translateX(-50%) scaleY(0.4) translateY(1px);
+}
+
+/* Second place styles */
+.second-place .medal-front, .second-place .medal-back {
+    background: linear-gradient(135deg, #00aaff, #0077ff);
+}
+
+.second-place .position::after {
+    background: #00aaff;
+}
+
+.second-place .pedestal {
+    height: 130px;
+    background: linear-gradient(to bottom, #00aaff, #0077ff);
+}
+
+.second-place .prize-amount {
+    color: #00aaff;
+}
+
+.second-place .reflection {
+    width: 120px;
+    height: 130px;
+    background: linear-gradient(to top, #00aaff, #0077ff);
+    left: calc(50% - 70px);
+}
+
+/* Third place styles */
+.third-place .medal-front, .third-place .medal-back {
+    background: linear-gradient(135deg, #00ffaa, #00aa77);
+}
+
+.third-place .position::after {
+    background: #00ffaa;
+}
+
+.third-place .pedestal {
+    height: 100px;
+    background: linear-gradient(to bottom, #00ffaa, #00aa77);
+}
+
+.third-place .prize-amount {
+    color: #00ffaa;
+}
+
+.third-place .reflection {
+    width: 120px;
+    height: 100px;
+    background: linear-gradient(to top, #00ffaa, #00aa77);
+    left: calc(50% + 70px);
+}
+
+/* Animation for medal flip */
+@keyframes glow {
+    0%, 100% { filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7)); }
+    50% { filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.9)); }
+}
+
+.medal-container:hover {
+    animation: glow 2s infinite;
+}
+
+.finalist-container {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.finalist-text {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1rem;
+}
+
+.prizes-line-break {
+
+}
+
+.prizes-special-category {
+    font-size: 1.2rem;
+}
+
+.prizes-lucky-draw {
+    font-size: 1.2rem;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .prizes-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    }
+    
+    .prize {
+    margin-bottom: 20px;
+    }
+    
+    .pedestal {
+    height: 100px !important;
+    }
+    
+    .reflection {
+    display: none;
+    }
+}
