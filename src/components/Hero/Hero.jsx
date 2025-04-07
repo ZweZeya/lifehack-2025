@@ -1,4 +1,5 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { AiOutlineClose } from "react-icons/ai";
 import p5 from 'p5';
 
 import "./Hero.scss";
@@ -199,8 +200,85 @@ const Hero = () => {
     }, []);
 
     return (
-        <div className="hero-container" ref={containerRef} />
+        <>
+            <div className="hero-container" ref={containerRef} />
+            <ErrorPopup />
+        </>
     );
 };
+
+const ErrorPopup = () => {
+    const [screenSize, setScreenSize] = useState({
+        width: window.innerWidth,
+        height: window.innerHeight
+    })
+    const [coordinates, setCoordinates] = useState([0, 0]);
+    const [isVisible, setIsVisible] = useState(false);
+    const [messageType, setMessageType] = useState(0);
+
+    const messages = [
+        "404: The Web Page took a day off.",
+        "Oops! Our code tripped over a bug.",
+        "Error: This wasn't supposed to happen.",
+        "Did you try turning it off and on again?",
+        "Beep boop. Something's not right.",
+        "Error 403: The gatekeeper says no.",
+        "This site's on a coffee break.",
+        "Oops! The server said 'nope'.",
+        "Warning: Code gremlins at work.",
+        "Error: The hamster powering this site fainted.",
+    ]
+
+    useEffect(() => {
+        showRandomlyAfterDelay(2000)
+
+        const handleResize = () => {
+            setScreenSize({
+                width: window.innerWidth,
+                height: window.innerHeight
+            })
+        }
+
+        window.addEventListener("resize", handleResize)
+        return () => window.removeEventListener("resize", handleResize)
+    }, [])
+
+    const showRandomly = () => {
+        const x = Math.random() * screenSize.width * 0.6
+        const y = Math.random() * screenSize.height * 0.6
+        setCoordinates([x, y])
+        setMessageType(currMessage => (currMessage + 1) % messages.length)
+        setIsVisible(true)
+    }
+
+    const showRandomlyAfterDelay = (delay) => {
+        setTimeout(() => {
+            showRandomly()
+        }, delay)
+    }
+
+    const handleClick = () => {
+        setIsVisible(false)
+        showRandomlyAfterDelay(500)
+    }
+
+    return (
+        <div 
+            className="hero-error-popup" 
+            style={{ 
+                left:coordinates[0], 
+                top: coordinates[1], 
+                display: isVisible ? "flex" : "none" 
+            }} 
+        >
+            <div className="hero-error-content">
+                <p className="hero-error-text">{messages[messageType]}</p>
+                <div className="hero-error-close" onClick={handleClick}>
+                    <AiOutlineClose size={15} />
+                </div>
+            </div>
+        </div>
+    )
+}
 
 export default Hero;
