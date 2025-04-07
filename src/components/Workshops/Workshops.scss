@@ -16,17 +16,6 @@
   text-align: left;
 }
 
-@media (max-width: 767px) {
-  .workshops-container {
-    margin: 2rem $mobile-horizontal-margin;
-    gap: 2rem;
-  }
-
-  .workshop-window-frame {
-    width: 100%;
-  }
-}
-
 .workshop-icon {
   margin: 0;
   padding: 0;
@@ -46,4 +35,23 @@
 
 .workshop-body {
   margin: 0 2rem 1rem 2rem;
+}
+
+@media (max-width: 767px) {
+  .workshops-container {
+    margin: 2rem $mobile-horizontal-margin;
+    gap: 2rem;
+  }
+
+  .workshop-window-frame {
+    width: 100%;
+  }
+
+  .workshop-title {
+    margin: 0 1rem;
+  }
+  
+  .workshop-body {
+    margin: 0 1rem 1rem 1rem;
+  }
 }

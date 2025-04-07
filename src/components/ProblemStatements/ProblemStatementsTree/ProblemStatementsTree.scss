@@ -4,12 +4,6 @@
   margin: 2rem $horizontal-margin;
 }
 
-@media (max-width: 767px) {
-  .problem-statements-main-container {
-    margin: 2rem $mobile-horizontal-margin;
-  }
-}
-
 .main-theme-container {
   position: relative;
   margin: 1rem 0;
@@ -92,4 +86,22 @@
 
 .subtheme-card-content {
   font-size: 14px;
+}
+
+@media (max-width: 767px) {
+  .problem-statements-main-container {
+    margin: 2rem $mobile-horizontal-margin;
+  }
+
+  .main-theme-container {
+    padding: 1rem;
+  }
+
+  .theme-card-container {
+    padding: 1rem;
+  }
+
+  .theme-card-icon {
+    margin-right: 0.5rem;
+  }
 }
