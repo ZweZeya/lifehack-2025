@@ -38,6 +38,16 @@
   flex-direction: column;
 }
 
+.theme-card-expand-btn {
+  position: absolute;
+  left: 50%;
+  transition: all 0.2s ease-in-out;
+}
+
+.theme-card-expand-btn-animation {
+  transform: rotate(180deg);
+}
+
 .theme-card-container {
   position: relative;
   margin: 1rem 0;

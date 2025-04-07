@@ -3,6 +3,7 @@ import { useState } from "react"
 import { MdOutlineHealthAndSafety } from "react-icons/md";
 import { PiBrain } from "react-icons/pi";
 import { RiTreeLine } from "react-icons/ri";
+import { FaCaretDown } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Header from "../../common/Header/Header";
 import EntranceAnimation from "../../common/EntranceAnimation/EntranceAnimation";
@@ -19,21 +20,21 @@ const ProblemStatementsTree = () => {
             color: "#ff00cc",
             children: [
                 {
-                    key: "Theme 1.1",
-                    title: "Digital Rights Management (DRM)",
-                    content: "DRM utilizes various technologies to safeguard digital content, preventing its unauthorized access and distribution by protecting creators' and distributors' rights.",
+                    key: "SubTheme 1.1",
+                    title: "Placeholder Subtheme 1.1",
+                    content: "Design a solution that leverages technology to improve everyday life by addressing a common but often overlooked problem in urban environments.",
                     children: []
                 },
                 {
-                    key: "Theme 1.2",
-                    title: "Digital Rights Management (DRM)",
-                    content: "DRM utilizes various technologies to safeguard digital content, preventing its unauthorized access and distribution by protecting creators' and distributors' rights.",
+                    key: "SubTheme 1.2",
+                    title: "Placeholder Subtheme 1.2",
+                    content: "Design a solution that leverages technology to improve everyday life by addressing a common but often overlooked problem in urban environments.",
                     children: []
                 },
                 {
-                    key: "Theme 1.3",
-                    title: "Digital Rights Management (DRM)",
-                    content: "DRM utilizes various technologies to safeguard digital content, preventing its unauthorized access and distribution by protecting creators' and distributors' rights.",
+                    key: "SubTheme 1.3",
+                    title: "Placeholder Subtheme 1.3",
+                    content: "Design a solution that leverages technology to improve everyday life by addressing a common but often overlooked problem in urban environments.",
                     children: []
                 }
             ]
@@ -46,23 +47,23 @@ const ProblemStatementsTree = () => {
             color: "#00aaff",
             children: [
                 {
-                    key: "Theme 2.1",
-                    title: "Digital Rights Management (DRM)",
-                    content: "DRM utilizes various technologies to safeguard digital content, preventing its unauthorized access and distribution by protecting creators' and distributors' rights.",
+                    key: "SubTheme 2.1",
+                    title: "Placeholder Subtheme 2.1",
+                    content: "Design a solution that leverages technology to improve everyday life by addressing a common but often overlooked problem in urban environments.",
                     expandedStates: [],
                     children: []
                 },
                 {
-                    key: "Theme 2.2",
-                    title: "Digital Rights Management (DRM)",
-                    content: "DRM utilizes various technologies to safeguard digital content, preventing its unauthorized access and distribution by protecting creators' and distributors' rights.",
+                    key: "SubTheme 2.2",
+                    title: "Placeholder Subtheme 2.2",
+                    content: "Design a solution that leverages technology to improve everyday life by addressing a common but often overlooked problem in urban environments.",
                     expandedStates: [],
                     children: []
                 },
                 {
-                    key: "Theme 2.3",
-                    title: "Digital Rights Management (DRM)",
-                    content: "DRM utilizes various technologies to safeguard digital content, preventing its unauthorized access and distribution by protecting creators' and distributors' rights.",
+                    key: "SubTheme 2.3",
+                    title: "Placeholder Subtheme 2.3",
+                    content: "Design a solution that leverages technology to improve everyday life by addressing a common but often overlooked problem in urban environments.",
                     expandedStates: [],
                     children: []
                 }
@@ -76,21 +77,21 @@ const ProblemStatementsTree = () => {
             color: "#00ffaa",
             children: [
                 {
-                    key: "Theme 3.1",
-                    title: "Digital Rights Management (DRM)",
-                    content: "DRM utilizes various technologies to safeguard digital content, preventing its unauthorized access and distribution by protecting creators' and distributors' rights.",
+                    key: "SubTheme 3.1",
+                    title: "Placeholder Subtheme 3.1",
+                    content: "Design a solution that leverages technology to improve everyday life by addressing a common but often overlooked problem in urban environments.",
                     children: []
                 },
                 {
-                    key: "Theme 3.2",
-                    title: "Digital Rights Management (DRM)",
-                    content: "DRM utilizes various technologies to safeguard digital content, preventing its unauthorized access and distribution by protecting creators' and distributors' rights.",
+                    key: "SubTheme 3.2",
+                    title: "Placeholder Subtheme 3.2",
+                    content: "Design a solution that leverages technology to improve everyday life by addressing a common but often overlooked problem in urban environments.",
                     children: []
                 },
                 {
-                    key: "Theme 3.3",
-                    title: "Digital Rights Management (DRM)",
-                    content: "DRM utilizes various technologies to safeguard digital content, preventing its unauthorized access and distribution by protecting creators' and distributors' rights.",
+                    key: "SubTheme 3.3",
+                    title: "Placeholder Subtheme 3.3",
+                    content: "Design a solution that leverages technology to improve everyday life by addressing a common but often overlooked problem in urban environments.",
                     children: []
                 }
             ]
@@ -132,7 +133,6 @@ const ThemeCard = (props) => {
             <motion.div 
                 className="theme-card-container" 
                 style={{border: `2px solid ${data.color}`}} 
-                onClick={onClick} 
                 transition={{duration: 0.17, bounce: 0, type: "spring"}}
                 layout
             >
@@ -151,6 +151,9 @@ const ThemeCard = (props) => {
                         {data.children.map(e => <SubThemeCard key={e.key} data={e} />)}
                     </motion.div>
                 }
+                <div className={`theme-card-expand-btn ${isExpanded ? "theme-card-expand-btn-animation" : ""}`} onClick={onClick}>
+                    <FaCaretDown size={23} />
+                </div>
             </motion.div>
         </EntranceAnimation>
     )
