@@ -141,7 +141,7 @@ const ThemeCard = (props) => {
                         <data.icon size={60} />
                     </motion.div>
                     <motion.div layout="position">
-                        <motion.h3 layout="position">{data.title}</motion.h3>
+                        <motion.h2 layout="position" className="theme-card-title">{data.title}</motion.h2>
                         <motion.p layout="position" className="theme-card-content">{data.content}</motion.p>
                     </motion.div>
                 </motion.div>

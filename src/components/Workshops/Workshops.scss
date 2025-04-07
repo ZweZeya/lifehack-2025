@@ -1,0 +1,49 @@
+@use "../../styles/variables" as *;
+
+.workshops-container {
+  margin: 0 $horizontal-margin;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  margin-bottom: 2rem;
+}
+
+.workshop-window-frame {
+  margin: 0;
+  width: 28vw;
+  text-align: left;
+}
+
+@media (max-width: 767px) {
+  .workshops-container {
+    margin: 2rem $mobile-horizontal-margin;
+    gap: 2rem;
+  }
+
+  .workshop-window-frame {
+    width: 100%;
+  }
+}
+
+.workshop-icon {
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+}
+
+.workshop-title {
+  margin: 0 2rem;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+  line-height: 1;
+}
+
+.workshop-body {
+  margin: 0 2rem 1rem 2rem;
+}
