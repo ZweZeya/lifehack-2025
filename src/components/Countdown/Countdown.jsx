@@ -28,7 +28,7 @@ const Countdown = () => {
     }, [updateTimeLeft]);
 
     return (
-        <>
+        <div>
             <div className="countdown-background">
                 <div className="countdown-container">
                     <div className="countdown-label" >starts in</div>
@@ -42,7 +42,7 @@ const Countdown = () => {
                 </div>
             </div>
             <div className="countdown-fade"></div>
-        </>
+        </div>
     );
 }
 

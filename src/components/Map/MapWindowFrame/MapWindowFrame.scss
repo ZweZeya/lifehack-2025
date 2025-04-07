@@ -1,11 +1,12 @@
 .leaflet-container {
-  width: 50vw;
-  height: 50vh;
+  width: 100%;
+  height: 12rem;
   min-width: 360px;
 }
 
-.map-header {
-  margin: 0rem 0rem 1rem 0rem;
+.map-label {
+  margin: 0.5rem 0;
+  text-align: left;
 }
 
 @media (max-width: 767px) {

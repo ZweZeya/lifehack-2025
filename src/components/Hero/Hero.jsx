@@ -36,16 +36,17 @@ const Hero = () => {
             p.createCanvas(p.windowWidth, p.windowHeight * 0.8);
             p.frameRate(12);
             p.noSmooth();
+            
+            setupComputerScreen();
+            setupComputerFrame();
+            setupComputerStand();
+            setupGlow();
+
             p.loadImage("/logo_circle.png", (image) => {
                 image.resize(logoSize, logoSize);
                 logo.copy(image, 0, 0, logoSize, logoSize, (w - logoSize) / 2, (h - logoSize) / 2, logoSize, logoSize);
                 logo.loadPixels();
             });
-
-            setupComputerScreen();
-            setupComputerFrame();
-            setupComputerStand();
-            setupGlow();
         }
 
         p.windowResized = () => {
@@ -92,6 +93,7 @@ const Hero = () => {
             computerScreen.loadPixels();
 
             logo = p.createImage(w, h);
+            logo.drawingContext.willReadFrequently = true;
             logo.loadPixels();
 
             ppx = [];
