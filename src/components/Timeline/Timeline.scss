@@ -1,3 +1,15 @@
+@use "../../styles/variables" as *;
+
+.timeline-container {
+  margin: 0 $horizontal-margin;
+}
+
+@media (max-width: 767px) {
+  .timeline-container {
+    margin: 2rem $mobile-horizontal-margin;
+  }
+}
+
 .timeline-container h2 {
   color: #ffffff;
 }
@@ -10,4 +22,12 @@
   color: #ffffff !important;
   opacity: 1 !important;
   text-align: left;
+}
+
+.timeline-event-icon {
+  color: "#ffffff";
+}
+
+.timeline-window-frame {
+  margin: 0;
 }

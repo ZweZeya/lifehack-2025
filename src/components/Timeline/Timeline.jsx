@@ -52,14 +52,15 @@ const Timeline = () => {
                     events.map((event, index) =>
                         <VerticalTimelineElement
                             contentStyle={{ padding: 0, background: "none", border: "none", boxShadow: "none" }}
-                            contentArrowStyle={{ borderRight: "16px solid #ffffff" }}
+                            contentArrowStyle={{ borderRight: "8px solid #ffffff" }}
                             date={event.date}
                             dateClassName="timeline-event-date"
                             icon={<event.icon />}
-                            iconStyle={{ background: event.iconColor, color: '#ffffff', opacity: 1 }}
+                            iconStyle={{ background: event.iconColor }}
+                            iconClassName="timeline-event-icon"
                             key={index}
                         >
-                            <WindowFrame className="tmp">
+                            <WindowFrame className="timeline-window-frame">
                                 <div>
                                     <h3 className="timeline-event-header">{event.title}</h3>
                                     <p>{event.content}</p>

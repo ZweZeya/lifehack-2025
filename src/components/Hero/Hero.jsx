@@ -9,14 +9,13 @@ const Hero = () => {
     // Inspired by Roni Kaufman's sketch
     // https://editor.p5js.org/ronikaufman/sketches/IxzXjdCmb
     const Sketch = (p) => {
-        const w = 320;
-        const h = 240;
-
-        const logoSize = 220;
-        const frameWidth = 60;
-        const standTopWidth = 120;
-        const standBaseWidth = 150
-        const standHeight = 20;
+        let w = 320;
+        let h = 240;
+        let logoSize = 220;
+        let frameWidth = 60;
+        let standTopWidth = 120;
+        let standBaseWidth = 150
+        let standHeight = 20;
 
         let backgroundColor = p.color("#080808");
 
@@ -30,6 +29,7 @@ const Hero = () => {
         let barY1;
         let barY2;
         let ppx;
+        let needShrink = false;
 
         p.setup = () => {
             p.createCanvas(p.windowWidth, p.windowHeight * 0.8);
@@ -49,6 +49,7 @@ const Hero = () => {
 
         p.windowResized = () => {
             p.resizeCanvas(p.windowWidth, p.windowHeight);
+            needShrink = p.windowWidth < 767
             setupComputerFrame();
             setupComputerStand();
             setupGlow();
@@ -60,19 +61,28 @@ const Hero = () => {
             updateGlow();
 
             p.background(backgroundColor);
-            
-            p.push();
-            p.translate((p.width - w) / 2, (p.height - h) / 2);
-            p.scale(1, 1.01);
-            p.image(computerScreen, 0, 0);
-            p.pop();
 
-            p.image(computerFrame, 0, 0);
-            p.image(computerStand, 0, 0);
+            p.push()
+            {
+                if (needShrink) {
+                    p.translate(p.width * 0.1, p.height * 0.1);
+                    p.scale(0.8);
+                }
 
-            p.push();
-            p.tint(255, 255, 255, (p.sin(theta) * 60) + 195);
-            p.image(glow, 0, 0);
+                p.push();
+                p.translate((p.width - w) / 2, (p.height - h) / 2);
+                p.scale(1, 1.01);
+                p.image(computerScreen, 0, 0);
+                p.pop();
+    
+                p.image(computerFrame, 0, 0);
+                p.image(computerStand, 0, 0);
+    
+                p.push();
+                p.tint(255, 255, 255, (p.sin(theta) * 60) + 195);
+                p.image(glow, 0, 0);
+                p.pop();
+            }
             p.pop();
         }
 

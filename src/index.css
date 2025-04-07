@@ -7,6 +7,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scrollbar-width: none;
 }
 
 html {
@@ -34,7 +35,7 @@ h1 {
 /* https://www.keshikan.net/fonts-e.html */
 @font-face {
   font-family: 'DSEG';
-  src: 
+  src:
     url('fonts/DSEG14Classic-Regular.woff') format('woff'),
     url('fonts/DSEG14Classic-Regular.ttf') format('truetype');
 }

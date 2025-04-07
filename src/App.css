@@ -12,6 +12,10 @@ section {
   align-items: center;
 }
 
-.about {
+.about-section {
   margin-bottom: 20vh;
+}
+
+.register-section {
+  margin: 30vh 0;
 }

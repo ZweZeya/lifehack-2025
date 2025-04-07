@@ -4,29 +4,39 @@ import { FaMedal } from "react-icons/fa"
 import { useState, useEffect } from "react"
 
 const Prizes = () => {
-    const top3data = [
-        {
-            title: "2nd",
-            prize: "$2000",
-            prizeClassName: "second-place",
-        },
+    const data = [
         {
             title: "1st",
             prize: "$3000",
             prizeClassName: "first-place",
         },
         {
+            title: "2nd",
+            prize: "$2000",
+            prizeClassName: "second-place",
+        },
+        {
             title: "3rd",
             prize: "$3000",
             prizeClassName: "third-place",
         },
-    ]
+    ];
+
+    const sortPedestals = () => {
+        return window.innerWidth <= 767 ? [...data] : [data[1], data[0], data[2]];
+    }
+
+    const [pedestals, setPedestals] = useState(sortPedestals());
+
+    useEffect(() => {
+        window.addEventListener("resize", () => setPedestals(sortPedestals()), false);
+    }, []);
 
     return (
         <div className="prizes-main-container">
             <Header>Prizes</Header>
             <div className="prizes-container">
-                {top3data.map(e => <Pedestal key={e.title} data={e} />)}
+                {pedestals.map(e => <Pedestal key={e.title} data={e} />)}
             </div>
             <div className="finalist-container">
                 <p className="finalist-text">Finalists (4-10): $200 each</p>
@@ -39,7 +49,7 @@ const Prizes = () => {
 }
 
 const Pedestal = (props) => {
-    const {title, prize, prizeClassName} = props.data
+    const { title, prize, prizeClassName } = props.data
 
     return (
         <div className={`prize ${prizeClassName}`}>

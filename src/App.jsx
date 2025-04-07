@@ -25,7 +25,7 @@ function App() {
                 </section>
                 
                 <EntranceAnimation>
-                    <section className="about">
+                    <section className="about-section">
                         <AboutWindowFrame />
                     </section>
                 </EntranceAnimation>
@@ -49,7 +49,7 @@ function App() {
                 </EntranceAnimation>
 
                 <EntranceAnimation>
-                    <section>
+                    <section className="register-section">
                         <Register />
                     </section>
                 </EntranceAnimation>

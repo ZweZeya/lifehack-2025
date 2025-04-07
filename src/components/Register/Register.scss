@@ -1,44 +1,78 @@
+@use "../../styles/variables" as *;
+
 .register-button {
-    display: inline-block;         /* Anchor behaves like a button */
-    position: relative;
-    background: #222;               /* Solid black background */
-    color: #fff;
-    font-size: 4rem;
-    padding: 24px 48px;
-    border-radius: 12px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: transform 0.2s ease;
-    overflow: hidden;     
-    margin: 3rem         /* To clip the pseudo-element inside the border */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: $background-color;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+  overflow: hidden;
+  margin: 3rem; /* To clip the pseudo-element inside the border */
+  z-index: 0;
 }
 
 /* Pseudo-element for the gradient border effect */
 .register-button::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 5px;  /* This controls the border thickness */
-    background: linear-gradient(45deg, #00FFFF, #FF00FF, #FFFF00, #000);
-    -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
-    z-index: -1;
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 5px; /* This controls the border thickness */
+  background: linear-gradient(45deg, $glitch-pink, $glitch-blue, $glitch-green);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: -1;
 }
 
 .register-button:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
+  animation: glitch1 $glitch-duration;
+}
+
+.register-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.register-icon {
+  font-size: 3rem;
+  margin: 1rem 0 0.5rem 0;
+}
+
+.register-label {
+  margin: 1rem 0 0.5rem 0;
+  text-shadow: none;
+}
+
+.register-subtitle > h3 {
+  margin: 0 0 0.5rem 0;
+  padding: 0;
+  font-size: 1rem;
+  color: #aaaaaa;
 }
 
 @media (max-width: 767px) {
-    .register-button {
-        font-size: 2rem;
-        padding: 12px 24px;
-    }
+  .register-icon {
+    font-size: 2rem;
   }
+
+  .register-label {
+    font-size: 2rem;
+    text-shadow: none;
+  }
+}

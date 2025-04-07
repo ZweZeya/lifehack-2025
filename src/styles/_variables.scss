@@ -1,6 +1,123 @@
 $background-color: rgba(0.2, 0.2, 0.2, 0.75);
 
-$glitch-pink: #ff00ff;
-$glitch-yellow: yellow;
-$glitch-blue: cyan;
+$glitch-pink: #ff00cc;
+$glitch-green: #00ffaa;
+$glitch-blue: #00aaff;
 $glitch-duration: 0.2s;
+
+$horizontal-margin: 12rem;
+$mobile-horizontal-margin: 4rem;
+
+.glitch1 {
+  animation: glitch1 $glitch-duration;
+}
+.glitch2 {
+  animation: glitch2 $glitch-duration;
+}
+.glitch3 {
+  animation: glitch3 $glitch-duration;
+}
+.glitch4 {
+  animation: glitch4 $glitch-duration;
+}
+
+.glitch1 div {
+  animation: glitch1 $glitch-duration;
+}
+
+.glitch2 div {
+  animation: glitch2 $glitch-duration;
+}
+
+.glitch3 div {
+  animation: glitch3 $glitch-duration;
+}
+
+.glitch4 div {
+  animation: glitch4 $glitch-duration;
+}
+
+/* Glitch animations */
+@keyframes glitch1 {
+  0% {
+    box-shadow: none;
+  }
+  20% {
+    box-shadow: 15px 10px 0 0 $glitch-green, 5px 9px 0 0 $glitch-pink;
+  }
+  50% {
+    box-shadow: 12px 1px 0 0 $glitch-green, -5px 6px 0 0 $glitch-blue;
+  }
+  60% {
+    box-shadow: -3px -10px 0 0 $glitch-green, 1px 12px 0 0 $glitch-blue;
+  }
+  75% {
+    box-shadow: 10px 11px 0 0 $glitch-pink, 4px -8px 0 0 $glitch-blue;
+  }
+  100% {
+    box-shadow: none;
+  }
+}
+
+@keyframes glitch2 {
+  0% {
+    box-shadow: none;
+  }
+  30% {
+    box-shadow: 15px 10px 0 0 $glitch-green, 5px 9px 0 0 $glitch-pink;
+  }
+  40% {
+    box-shadow: 12px 1px 0 0 $glitch-green, -5px 6px 0 0 $glitch-blue;
+  }
+  60% {
+    box-shadow: -3px -10px 0 0 $glitch-green, 1px 12px 0 0 $glitch-blue;
+  }
+  85% {
+    box-shadow: 10px 11px 0 0 $glitch-pink, 4px -8px 0 0 $glitch-blue;
+  }
+  100% {
+    box-shadow: none;
+  }
+}
+
+@keyframes glitch3 {
+  0% {
+    box-shadow: none;
+  }
+  10% {
+    box-shadow: 3px 3px 0 0 $glitch-blue, -2px 5px 0 0 $glitch-pink;
+  }
+  30% {
+    box-shadow: 6px 1px 0 0 $glitch-green, -12px 5px 0 0 $glitch-blue;
+  }
+  60% {
+    box-shadow: 10px -3px 0 0 $glitch-green, 7px 4px 0 0 $glitch-blue;
+  }
+  70% {
+    box-shadow: -14px -5px 0 0 $glitch-green, 2px 3px 0 0 $glitch-blue;
+  }
+  100% {
+    box-shadow: none;
+  }
+}
+
+@keyframes glitch4 {
+  0% {
+    box-shadow: none;
+  }
+  25% {
+    box-shadow: 10px -3px 0 0 $glitch-green, 7px 1px 0 0 $glitch-blue;
+  }
+  40% {
+    box-shadow: -13px 6px 0 0 $glitch-green, 6px 9px 0 0 $glitch-blue;
+  }
+  65% {
+    box-shadow: -3px 14px 0 0 $glitch-pink, 5px -3px 0 0 $glitch-blue;
+  }
+  90% {
+    box-shadow: -8px 4px 0 0 $glitch-green, 14px -5px 0 0 $glitch-blue;
+  }
+  100% {
+    box-shadow: none;
+  }
+}

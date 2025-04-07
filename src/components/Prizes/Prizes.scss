@@ -7,7 +7,7 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   position: relative;
   overflow: hidden;
-  margin: 2rem 12rem;
+  margin: 2rem $horizontal-margin;
 }
 
 .prizes-main-container::before {
@@ -22,8 +22,6 @@
   animation: gradient-shift 3s linear infinite;
   z-index: 1;
 }
-
-
 
 @keyframes gradient-shift {
   0% {
@@ -240,13 +238,14 @@
 
 @media (max-width: 767px) {
   .prizes-main-container {
-    margin: 2rem 1rem;
+    margin: 2rem $mobile-horizontal-margin;
   }
 
   .prizes-container {
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: 2rem;
+    margin-top: 3rem;
   }
 
   .prize {

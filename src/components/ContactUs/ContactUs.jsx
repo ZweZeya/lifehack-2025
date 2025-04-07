@@ -1,28 +1,27 @@
 import Header from "../common/Header/Header"
-import { FaLinkedin, FaInstagram, FaTelegram } from "react-icons/fa"
-import { MdOutlineMailOutline } from "react-icons/md"
+import { RiTelegramLine, RiLinkedinBoxLine, RiInstagramLine, RiMailLine } from "react-icons/ri"
 import "./ContactUs.scss"
 
 const ContactUs = () => {
     const data = [
         {
             name: "telegram",
-            icon: FaTelegram,
+            icon: RiTelegramLine,
             to: "",
         },
         {
             name: "instagram",
-            icon: FaInstagram,
+            icon: RiInstagramLine,
             to: "",
         },
         {
             name: "linkedin",
-            icon: FaLinkedin,
+            icon: RiLinkedinBoxLine,
             to: "",
         },
         {
             name: "email",
-            icon: MdOutlineMailOutline,
+            icon: RiMailLine,
             to: "",
         }
     ]
