@@ -151,8 +151,8 @@ const ThemeCard = (props) => {
                         {data.children.map(e => <SubThemeCard key={e.key} data={e} />)}
                     </motion.div>
                 }
-                <motion.div className={`theme-card-expand-btn ${isExpanded ? "theme-card-expand-btn-animation" : ""}`} onClick={onClick}>
-                    <FaCaretDown size={23} />
+                <motion.div className={`theme-card-expand-btn ${isExpanded ? "theme-card-expand-btn-expanded" : ""}`} onClick={onClick}>
+                    <FaCaretDown size={24} />
                 </motion.div>
             </motion.div>
         </EntranceAnimation>
