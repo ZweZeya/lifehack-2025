@@ -7,4 +7,7 @@
     z-index: -1;
     pointer-events: none;
     opacity: 0.9;
+    user-select: none;
+    touch-action: none;
+    -webkit-user-select: none;
 }

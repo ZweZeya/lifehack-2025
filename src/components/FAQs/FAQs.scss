@@ -2,12 +2,12 @@
 
 .faqs-container {
   margin: 0 $horizontal-margin;
+  margin-bottom: 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: start;
   gap: 4rem;
-  margin-bottom: 2rem;
 }
 
 .faq-window-frame {
@@ -16,21 +16,25 @@
   text-align: left;
 }
 
+.faq-question {
+  margin: 1rem 2rem 1rem 2rem;
+}
+
+.faq-answer {
+  margin: 1rem 2rem 1rem 2rem;
+}
+
 @media (max-width: 767px) {
   .faqs-container {
     margin: 2rem $mobile-horizontal-margin;
+  }
+}
+
+@media (max-width: 1280px) {  .faqs-container {
     gap: 2rem;
   }
 
   .faq-window-frame {
     width: 100%;
   }
-}
-
-.faq-question {
-  margin: 1rem 2rem 0rem 2rem;
-}
-
-.faq-answer {
-  margin: 1rem 2rem 1rem 2rem;
 }

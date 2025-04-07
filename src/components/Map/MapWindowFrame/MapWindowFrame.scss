@@ -1,16 +1,9 @@
 .leaflet-container {
   width: 100%;
   height: 12rem;
-  min-width: 360px;
 }
 
 .map-label {
   margin: 0.5rem 0;
   text-align: left;
-}
-
-@media (max-width: 767px) {
-  .leaflet-container {
-    min-width: 270px;
-  }
 }

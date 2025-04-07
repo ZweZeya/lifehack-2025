@@ -10,16 +10,16 @@ const Background = () => {
     // https://editor.p5js.org/BarneyCodes/sketches/XUer03ShM
     const Sketch = (p) => {
         let screen;
-        let glitchShader;
+        // let glitchShader;
 
         const vanishing = 260;
         const horizon = 360;
-        const cutoff = 0.5;
+        // const cutoff = 0.5;
 
         let lineBuffer;
 
         p.preload = () => {
-            glitchShader = p.loadShader('shaders/background.vert', 'shaders/background.frag');
+            // glitchShader = p.loadShader('shaders/background.vert', 'shaders/background.frag');
         }
 
         p.setup = () => {
@@ -28,7 +28,7 @@ const Background = () => {
 
             setupMoon();
             setupGrid();
-            p.shader(glitchShader);
+            // p.shader(glitchShader);
         }
 
         p.windowResized = () => {
@@ -42,7 +42,10 @@ const Background = () => {
             updateMoon();
             updateGrid();
 
-            p.rect(-p.width / 2, -p.height / 2, p.width, p.height);
+            p.push();
+            p.image(screen, -p.width / 2, -p.height / 2, p.width, p.height);
+            p.pop();
+            // p.rect(-p.width / 2, -p.height / 2, p.width, p.height);
 
             screen.fill(p.color("#14143A"))
             screen.rect(0, horizon, p.width, p.height - 300);
@@ -80,9 +83,14 @@ const Background = () => {
         }
 
         const updateMoon = () => {
-            const v = p.noise(p.millis() / 100);
-            glitchShader.setUniform('texture', screen);
-            glitchShader.setUniform('noise', Math.max(p.pow((v - cutoff) * 1 / (1 - cutoff), 2), 0));
+            // const s = p.noise(p.millis() / 100);
+            // const t = p.pow((s - cutoff) / (1 - cutoff), 2)
+            // const u = t.toFixed(4);
+            // const v = Number(Math.max(u, 0));
+            // const noise = isNaN(v) ? 0 : v;
+            // const noise = 0;
+            // glitchShader.setUniform('screen', screen);
+            // glitchShader.setUniform('noise', noise);
         }
 
         const updateGrid = () => {

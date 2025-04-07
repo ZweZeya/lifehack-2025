@@ -2,12 +2,12 @@
 
 .workshops-container {
   margin: 0 $horizontal-margin;
+  margin-bottom: 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 4rem;
-  margin-bottom: 2rem;
 }
 
 .workshop-window-frame {
@@ -40,18 +40,15 @@
 @media (max-width: 767px) {
   .workshops-container {
     margin: 2rem $mobile-horizontal-margin;
+  }
+}
+
+@media (max-width: 1280px) {
+  .workshops-container {
     gap: 2rem;
   }
 
   .workshop-window-frame {
     width: 100%;
-  }
-
-  .workshop-title {
-    margin: 0 1rem;
-  }
-  
-  .workshop-body {
-    margin: 0 1rem 1rem 1rem;
   }
 }
