@@ -217,6 +217,7 @@ const ErrorPopup = () => {
     const [coordinates, setCoordinates] = useState([0, 0]);
     const [isVisible, setIsVisible] = useState(false);
     const [messageType, setMessageType] = useState(0);
+    const [isHovered, setIsHovered] = useState(false);
 
     const messages = [
         "404: The Web Page took a day off.",
@@ -261,6 +262,7 @@ const ErrorPopup = () => {
 
     const handleClick = () => {
         setIsVisible(false)
+        setIsHovered(false)
         showRandomlyAfterDelay(500)
     }
 
@@ -275,7 +277,16 @@ const ErrorPopup = () => {
         >
             <div className="hero-error-content">
                 <p className="hero-error-text">{messages[messageType]}</p>
-                <div className="hero-error-close" onClick={handleClick}>
+                <div 
+                    className="hero-error-close" 
+                    onClick={handleClick}
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                    style={{
+                        color: isHovered ? "#ff66cc" : "#ffffff",
+                        transform: isHovered ? "scale(1.4)" : "scale(1)",
+                    }}
+                >
                     <AiOutlineClose size={15} />
                 </div>
             </div>
