@@ -36,6 +36,7 @@ const Hero = () => {
             p.createCanvas(p.windowWidth, p.windowHeight * 0.8);
             p.frameRate(12);
             p.noSmooth();
+            needShrink = p.windowWidth < 767
             
             setupComputerScreen();
             setupComputerFrame();
