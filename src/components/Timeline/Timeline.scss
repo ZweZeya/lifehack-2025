@@ -4,12 +4,6 @@
   margin: 0 $horizontal-margin;
 }
 
-@media (max-width: 767px) {
-  .timeline-container {
-    margin: 2rem $mobile-horizontal-margin;
-  }
-}
-
 .timeline-container h2 {
   color: #ffffff;
 }
@@ -30,4 +24,10 @@
 
 .timeline-window-frame {
   margin: 0;
+}
+
+@media (max-width: 767px) {
+  .timeline-container {
+    margin: 2rem;
+  }
 }
