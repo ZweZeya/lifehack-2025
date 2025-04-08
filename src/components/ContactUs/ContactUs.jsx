@@ -7,17 +7,17 @@ const ContactUs = () => {
         {
             name: "telegram",
             icon: RiTelegramLine,
-            to: "",
+            to: "https://t.me/nuscomputingclub",
         },
         {
             name: "instagram",
             icon: RiInstagramLine,
-            to: "",
+            to: "https://www.instagram.com/nuscomputingclub",
         },
         {
             name: "linkedin",
             icon: RiLinkedinBoxLine,
-            to: "",
+            to: "https://sg.linkedin.com/company/nus-students-computing-club",
         },
         {
             name: "email",

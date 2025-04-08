@@ -17,7 +17,7 @@ const Prizes = () => {
         },
         {
             title: "3rd",
-            prize: "$3000",
+            prize: "$1000",
             prizeClassName: "third-place",
         },
     ];
