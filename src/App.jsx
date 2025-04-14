@@ -5,6 +5,7 @@ import Countdown from "./components/Countdown/Countdown";
 import EntranceAnimation from "./components/common/EntranceAnimation/EntranceAnimation";
 import FAQs from "./components/FAQs/FAQs";
 import Hero from "./components/Hero/Hero";
+import NavigationMenu from "./components/NavigationMenu/NavigationMenu";
 import ProblemStatementsTree from "./components/ProblemStatements/ProblemStatementsTree/ProblemStatementsTree";
 import Prizes from "./components/Prizes/Prizes";
 import Register from "./components/Register/Register";
@@ -17,8 +18,9 @@ function App() {
     return (
         <>
             <Background />
+            <NavigationMenu />
 
-            <div>
+            <div id="page-wrap">
                 <Hero />
 
                 <section>
@@ -26,25 +28,25 @@ function App() {
                 </section>
                 
                 <EntranceAnimation>
-                    <section className="about-section">
+                    <section id="about" className="about-section">
                         <AboutWindowFrame />
                     </section>
                 </EntranceAnimation>
 
                 <EntranceAnimation>
-                    <section>
+                    <section id="problem-statements">
                         <ProblemStatementsTree />
                     </section>
                 </EntranceAnimation>
 
                 <EntranceAnimation>
-                    <section>
+                    <section id="timeline">
                         <Timeline />
                     </section>
                 </EntranceAnimation>
 
                 <EntranceAnimation>
-                    <section>
+                    <section id="prizes">
                         <Prizes />
                     </section>
                 </EntranceAnimation>
@@ -62,7 +64,7 @@ function App() {
                 </EntranceAnimation>
 
                 <EntranceAnimation>
-                    <section>
+                    <section id="faqs">
                         <FAQs />
                     </section>
                 </EntranceAnimation>
