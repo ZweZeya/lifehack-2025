@@ -1,0 +1,32 @@
+.bm-burger-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 36px;
+  height: 30px;
+}
+
+.bm-burger-bars {
+  background: #222222;
+  transition: all 0.8s ease-in-out;
+}
+
+.bm-burger-bars--scrolled {
+  background: #ffffff;
+}
+
+.bm-menu {
+  background: #111111;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+.bm-item {
+  display: block;
+  padding: 0.5rem;
+  margin-right: 1rem;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: right;
+  cursor: pointer;
+}
