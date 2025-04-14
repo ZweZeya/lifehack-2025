@@ -5,7 +5,7 @@ import "./Countdown.scss"
 
 const Countdown = () => {
     const targetDate = useMemo(() => {
-        return new Date("2025-05-29T09:00:00+08:00");
+        return new Date("2025-06-16T09:30:00+08:00");
     }, []);
 
     const updateTimeLeft = useCallback(() => {

@@ -9,6 +9,7 @@ import NavigationMenu from "./components/NavigationMenu/NavigationMenu";
 import ProblemStatementsTree from "./components/ProblemStatements/ProblemStatementsTree/ProblemStatementsTree";
 import Prizes from "./components/Prizes/Prizes";
 import Register from "./components/Register/Register";
+import Sponsors from "./components/Sponsors/Sponsors";
 import Timeline from "./components/Timeline/Timeline";
 import Workshops from "./components/Workshops/Workshops";
 
@@ -59,9 +60,15 @@ function App() {
 
                 <EntranceAnimation>
                     <section>
-                        <Workshops />
+                        <Sponsors />
                     </section>
                 </EntranceAnimation>
+
+                {/* <EntranceAnimation>
+                    <section>
+                        <Workshops />
+                    </section>
+                </EntranceAnimation> */}
 
                 <EntranceAnimation>
                     <section id="faqs">
