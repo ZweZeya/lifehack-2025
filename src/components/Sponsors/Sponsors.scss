@@ -1,0 +1,62 @@
+@use "../../styles/variables" as *;
+
+.sponsors-container {
+  margin: 0 $horizontal-margin;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.sponsor-tier-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 0;
+  width: 28vw;
+  text-align: left;
+}
+
+.sponsor-tier {
+  margin: 0 2rem;
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  line-height: 1;
+}
+
+.sponsor-logo {
+  margin: 0 2rem 1rem 2rem;
+  height: 10vh;
+}
+
+@media (max-width: 767px) {
+  .sponsors-container {
+    margin: 2rem $mobile-horizontal-margin 4rem $mobile-horizontal-margin;
+  }
+
+  .sponsor-tier {
+    font-size: 1rem;
+  }
+
+  .sponsor-logo {
+    height: auto;
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 1280px) {
+  .sponsors-container {
+    gap: 2rem;
+  }
+
+  .sponsor-tier-container {
+    width: 100%;
+  }
+}
