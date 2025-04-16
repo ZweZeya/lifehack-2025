@@ -15,28 +15,28 @@ const Timeline = () => {
 
     const events = [
         {
-            date: "14 April",
+            date: "21 April",
             title: "Registration",
             content: "Gather your friends and join together in teams of 2-4. Get excited to participate in the Hackathon.",
             icon: LuClipboardPen,
             iconColor: "#2a9df4",
         },
         {
-            date: "29 May",
+            date: "16 June",
             title: "Opening Ceremony & Activities",
             content: "Come down and join us in games, workshops, and lucky draws. Make new friends, win prizes and start hacking on a high note.",
             icon: MdOutlineCelebration,
             iconColor: "#187bcd",
         },
         {
-            date: "31 May",
+            date: "18 June",
             title: "Hack Submission",
             content: "Submit your exciting hack along with a pitch video. Get ready to be selected to be one of our exciting semi-finalists.",
             icon: HiComputerDesktop,
             iconColor: "#1167b1",
         },
         {
-            date: "1 June",
+            date: "19 June",
             title: "Finale",
             content: "Pitch you hack and meet industry leaders. Celebrate your hard earned hackathon victory.",
             icon: FaMedal,

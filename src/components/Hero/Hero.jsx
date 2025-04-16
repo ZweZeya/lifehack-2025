@@ -1,5 +1,5 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { AiOutlineClose } from "react-icons/ai";
+import React, { useLayoutEffect, useRef } from 'react';
+import ErrorPopup from './ErrorPopup/ErrorPopup';
 import p5 from 'p5';
 
 import "./Hero.scss";
@@ -202,25 +202,7 @@ const Hero = () => {
         return () => s.remove();
     }, []);
 
-    return (
-        <>
-            <div className="hero-container" ref={containerRef} />
-            <ErrorPopup />
-        </>
-    );
-};
-
-const ErrorPopup = () => {
-    const [screenSize, setScreenSize] = useState({
-        width: window.innerWidth,
-        height: window.innerHeight
-    })
-    const [coordinates, setCoordinates] = useState([0, 0]);
-    const [isVisible, setIsVisible] = useState(false);
-    const [messageType, setMessageType] = useState(0);
-    const [isHovered, setIsHovered] = useState(false);
-
-    const messages = [
+    const messages1 = [
         "404: The Web Page took a day off.",
         "Oops! Our code tripped over a bug.",
         "Error: This wasn't supposed to happen.",
@@ -233,66 +215,42 @@ const ErrorPopup = () => {
         "Error: The hamster powering this site fainted.",
     ]
 
-    useEffect(() => {
-        showRandomlyAfterDelay(2000)
+    const messages2 = [
+        "500: Internal Server Error — please send snacks.",
+        "Oops! The algorithm had an existential crisis.",
+        "NullPointerException: We pointed at nothing.",
+        "Error: Too many tabs open in the developer’s brain.",
+        "Caution: AI tried to take over and failed.",
+        "Segmentation Fault: Core dumped... somewhere?",
+        "Connection lost: Server ran away screaming.",
+        "403 Forbidden: You shall not pass!",
+        "System overload: Too much awesomeness detected.",
+        "The page you're looking for is in another castle.",
+    ]
 
-        const handleResize = () => {
-            setScreenSize({
-                width: window.innerWidth,
-                height: window.innerHeight
-            })
-        }
-
-        window.addEventListener("resize", handleResize)
-        return () => window.removeEventListener("resize", handleResize)
-    }, [])
-
-    const showRandomly = () => {
-        const x = Math.random() * screenSize.width * 0.6
-        const y = Math.random() * screenSize.height * 0.6
-        setCoordinates([x, y])
-        setMessageType(currMessage => (currMessage + 1) % messages.length)
-        setIsVisible(true)
-    }
-
-    const showRandomlyAfterDelay = (delay) => {
-        setTimeout(() => {
-            showRandomly()
-        }, delay)
-    }
-
-    const handleClick = () => {
-        setIsVisible(false)
-        setIsHovered(false)
-        showRandomlyAfterDelay(500)
-    }
+    const messages3 = [
+        "Error 418: I'm a teapot. No coffee for you.",
+        "Blue screen of nope.",
+        "Glitch in the Matrix detected.",
+        "Oops! Our quantum computer is still in superposition.",
+        "Server went on a vacation to the cloud.",
+        "Unexpected token found. It says 'hello'.",
+        "Kernel panic! Please bring a blanket.",
+        "Code broke. Developer crying in the corner.",
+        "Page not found. Try yelling at your screen?",
+        "Error: Compiler tried to compile feelings."
+    ]
 
     return (
-        <div 
-            className="hero-error-popup" 
-            style={{ 
-                left:coordinates[0], 
-                top: coordinates[1], 
-                display: isVisible ? "flex" : "none" 
-            }} 
-        >
-            <div className="hero-error-content">
-                <p className="hero-error-text">{messages[messageType]}</p>
-                <div 
-                    className="hero-error-close" 
-                    onClick={handleClick}
-                    onMouseEnter={() => setIsHovered(true)}
-                    onMouseLeave={() => setIsHovered(false)}
-                    style={{
-                        color: isHovered ? "#ff66cc" : "#ffffff",
-                        transform: isHovered ? "scale(1.4)" : "scale(1)",
-                    }}
-                >
-                    <AiOutlineClose size={15} />
-                </div>
-            </div>
-        </div>
-    )
-}
+        <>
+            <div className="hero-container" ref={containerRef} />
+            <ErrorPopup messages={messages1} />
+            <ErrorPopup messages={messages2} />
+            <ErrorPopup messages={messages3} />
+        </>
+    );
+};
+
+
 
 export default Hero;
