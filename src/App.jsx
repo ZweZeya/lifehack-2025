@@ -35,11 +35,11 @@ function App() {
                     </section>
                 </EntranceAnimation>
 
-                <EntranceAnimation>
+                {/* <EntranceAnimation>
                     <section id="teams">
                         <Teams />
                     </section>
-                </EntranceAnimation>
+                </EntranceAnimation> */}
 
                 <EntranceAnimation>
                     <section id="problem-statements">
@@ -59,12 +59,11 @@ function App() {
                     </section>
                 </EntranceAnimation>
                 
-                {/* To be displayed for second round & finals */}
-                {/* <EntranceAnimation>
-                    <section id="teams">
+                <EntranceAnimation>
+                    <section className="register-section">
                         <Register />
                     </section>
-                </EntranceAnimation> */}
+                </EntranceAnimation>
 
                 <EntranceAnimation>
                     <section>
