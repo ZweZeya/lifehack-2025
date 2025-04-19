@@ -32,8 +32,13 @@
 }
 
 .sponsor-logo {
-  margin: 0 2rem 1rem 2rem;
+  margin: 0 2rem 3rem 2rem;
   height: 10vh;
+}
+
+.sponsor-logo--short {
+  width: 25vw;
+  height: auto;
 }
 
 @media (max-width: 767px) {
@@ -47,6 +52,7 @@
 
   .sponsor-logo {
     height: auto;
+    width: fit-content;
     max-width: 80%;
   }
 }
