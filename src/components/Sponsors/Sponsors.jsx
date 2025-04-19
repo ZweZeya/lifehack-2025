@@ -4,8 +4,24 @@ import "./Sponsors.scss";
 
 const Sponsors = () => {
     const data = {
-        "Gold": ["millennium.png",],
-        "Silver": ["ncs.png",],
+        "Gold": [
+            {
+                className: "sponsor-logo--short",
+                img: "singtel.png",
+            }
+        ],
+        "Silver": [
+            {
+                img: "st.png",
+                
+            },
+            {
+                img: "ncs.png",
+            },
+            {
+                img: "millennium.png",
+            },
+        ],
     };
 
     return (
@@ -18,7 +34,7 @@ const Sponsors = () => {
                             <h2>{tier}</h2>
                         </div>
                         {
-                            logos.map((logo, j) =><img src={logo} className="sponsor-logo" key={j} />)
+                            logos.map((logo, j) => <img src={logo.img} className={`sponsor-logo ${logo.className ?? ""}`} key={j} />)
                         }
                     </div>)
                 }
