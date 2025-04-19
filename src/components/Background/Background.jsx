@@ -6,46 +6,33 @@ import "./Background.scss";
 const Background = () => {
     const containerRef = useRef();
 
-    // Inspired by BarneyCodes's sketch
-    // https://editor.p5js.org/BarneyCodes/sketches/XUer03ShM
     const Sketch = (p) => {
-        let screen;
-        // let glitchShader;
-
         const vanishing = 260;
         const horizon = 360;
-        // const cutoff = 0.5;
 
+        let screen;
         let lineBuffer;
 
-        p.preload = () => {
-            // glitchShader = p.loadShader('shaders/background.vert', 'shaders/background.frag');
-        }
-
         p.setup = () => {
-            p.createCanvas(p.windowWidth, p.windowHeight + 100, p.WEBGL);
+            p.createCanvas(p.windowWidth, p.windowHeight + 100);
             screen = p.createGraphics(p.width, p.height);
 
             setupMoon();
             setupGrid();
-            // p.shader(glitchShader);
         }
 
         p.windowResized = () => {
-            // p.resizeCanvas(p.windowWidth, p.windowHeight);
-            // screen = p.createGraphics(p.width, p.height);
-            // setupMoon();
-            // setupGrid();
+            p.resizeCanvas(p.windowWidth, p.windowHeight);
+            screen = p.createGraphics(p.width, p.height);
+            setupGrid();
         }
 
         p.draw = () => {
-            // updateMoon();
             updateGrid();
 
             p.push();
-            p.image(screen, -p.width / 2, -p.height / 2, p.width, p.height);
+            p.image(screen, 0, 0, p.width, p.height);
             p.pop();
-            // p.rect(-p.width / 2, -p.height / 2, p.width, p.height);
 
             screen.fill(p.color("#14143A"))
             screen.rect(0, horizon, p.width, p.height - 300);
@@ -69,7 +56,7 @@ const Background = () => {
                 screen.drawingContext.shadowColor = p.color(160, 215, 225, i);
                 screen.ellipse(p.width / 2, vanishing, 300, 300);
             }
-            
+
             screen.drawingContext.shadowBlur = 0;
             screen.ellipse(p.width / 2, vanishing, 240, 240);
         }
@@ -81,16 +68,6 @@ const Background = () => {
                 lineBuffer.push(y);
             }
         }
-
-        // const updateMoon = () => {
-        //     const s = p.noise(p.millis() / 100);
-        //     const t = p.pow((s - cutoff) / (1 - cutoff), 2)
-        //     const u = t.toFixed(4);
-        //     const v = Number(Math.max(u, 0));
-        //     const noise = isNaN(v) ? 0 : v;
-        //     glitchShader.setUniform('screen', screen);
-        //     glitchShader.setUniform('noise', noise);
-        // }
 
         const updateGrid = () => {
             lineBuffer = lineBuffer
