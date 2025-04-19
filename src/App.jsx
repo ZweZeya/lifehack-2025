@@ -14,6 +14,7 @@ import Timeline from "./components/Timeline/Timeline";
 import Workshops from "./components/Workshops/Workshops";
 
 import "./App.css";
+import Teams from "./components/Teams/Teams";
 
 function App() {
     return (
@@ -35,6 +36,12 @@ function App() {
                 </EntranceAnimation>
 
                 <EntranceAnimation>
+                    <section id="teams">
+                        <Teams />
+                    </section>
+                </EntranceAnimation>
+
+                <EntranceAnimation>
                     <section id="problem-statements">
                         <ProblemStatementsTree isEnabled={false} />
                     </section>
@@ -51,12 +58,13 @@ function App() {
                         <Prizes />
                     </section>
                 </EntranceAnimation>
-
-                <EntranceAnimation>
-                    <section className="register-section">
+                
+                {/* To be displayed for second round & finals */}
+                {/* <EntranceAnimation>
+                    <section id="teams">
                         <Register />
                     </section>
-                </EntranceAnimation>
+                </EntranceAnimation> */}
 
                 <EntranceAnimation>
                     <section>

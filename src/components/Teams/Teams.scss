@@ -1,0 +1,125 @@
+@use "../../styles/variables" as *;
+
+.teams-container {
+  background-color: $background-color;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+  margin: 2rem $horizontal-margin;
+}
+
+.teams-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ff00cc, #00aaff, #ff00cc);
+  background-size: 200% 100%;
+  animation: gradient-shift 3s linear infinite;
+  z-index: 1;
+}
+
+.table-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid #9900ff;
+  box-shadow: 0 0 15px rgba(153, 0, 255, 0.5);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  position: relative;
+}
+
+.teams-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.teams-table thead {
+  border-bottom: 1px solid rgba(153, 0, 255, 0.5);
+}
+
+.teams-table th {
+  padding: 16px;
+  text-align: left;
+  color: #00ffff;
+  font-weight: bold;
+}
+
+.teams-table tbody tr {
+  border-bottom: 1px solid rgba(153, 0, 255, 0.2);
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.teams-table tbody tr:hover {
+  background-color: rgba(153, 0, 255, 0.2);
+}
+
+.teams-table td {
+  padding: 16px;
+}
+
+.team-name {
+  color: #bb86fc;
+}
+
+.team-members {
+  color: #03dac6;
+}
+
+.project-name {
+  color: #ff79c6;
+}
+
+.glitch-effect td {
+  position: relative;
+  animation: glitchText 0.5s;
+  overflow: hidden;
+}
+
+.gradient-border {
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(to right, #9900ff, #ff2d95, #00ffff);
+}
+
+@keyframes glitchText {
+  0% { color: #ff2d95; }
+  20% { color: #00ffff; }
+  40% { color: #ffff00; }
+  60% { color: #ff2d95; }
+  80% { color: #00ffff; }
+  100% { color: inherit; }
+}
+
+@media (max-width: 768px) {
+  .finalists-header {
+    font-size: 28px;
+  }
+  
+  .finalists-table th,
+  .finalists-table td {
+    padding: 12px 8px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .finalists-container {
+    padding: 16px 8px;
+  }
+  
+  .finalists-header {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+}
