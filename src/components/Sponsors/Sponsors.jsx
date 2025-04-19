@@ -4,24 +4,31 @@ import "./Sponsors.scss";
 
 const Sponsors = () => {
     const data = {
-        "Gold": [
-            {
-                className: "sponsor-logo--short",
-                img: "singtel.png",
-            }
-        ],
-        "Silver": [
-            {
-                img: "st.png",
-                
-            },
-            {
-                img: "ncs.png",
-            },
-            {
-                img: "millennium.png",
-            },
-        ],
+        "Gold": {
+            color: "#FEBA17",
+            logos: [
+                {
+                    className: "sponsor-logo--short",
+                    img: "singtel.png",
+                }
+            ],
+        },
+        "Silver": {
+            color: "#B7B7B7",
+            logos: [
+                {
+                    img: "st.png",
+                    
+                },
+                {
+                    img: "ncs.png",
+                },
+                {
+                    img: "millennium.png",
+                },
+            ],
+        },
+        
     };
 
     return (
@@ -29,12 +36,12 @@ const Sponsors = () => {
             <Header>Sponsors</Header>
             <div className="sponsors-container">
                 {
-                    Object.entries(data).map(([tier, logos], i) => <div className="sponsor-tier-container" key={i}>
+                    Object.entries(data).map(([tier, tierData], i) => <div className="sponsor-tier-container" key={i}>
                         <div className="sponsor-tier">
-                            <h2>{tier}</h2>
+                            <h2 className="sponsor-tier-text" style={{color: tierData.color}}>{tier}</h2>
                         </div>
                         {
-                            logos.map((logo, j) => <img src={logo.img} className={`sponsor-logo ${logo.className ?? ""}`} key={j} />)
+                            tierData.logos.map((logo, j) => <img src={logo.img} className={`sponsor-logo ${logo.className ?? ""}`} key={j} />)
                         }
                     </div>)
                 }

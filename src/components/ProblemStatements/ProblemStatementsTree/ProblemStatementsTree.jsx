@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import Header from "../../common/Header/Header";
 import EntranceAnimation from "../../common/EntranceAnimation/EntranceAnimation";
 
-const ProblemStatementsTree = () => {
+const ProblemStatementsTree = ({ isEnabled }) => {
     const [expanded, setExpanded] = useState(-1)
 
     const data = [
@@ -22,19 +22,19 @@ const ProblemStatementsTree = () => {
                 {
                     key: "SubTheme 1.1",
                     title: "Placeholder Subtheme 1.1",
-                    content: "Design a solution that leverages technology to improve everyday life by addressing a common but often overlooked problem in urban environments.",
+                    content: "Build an innovative solution that addresses a real-world challenge faced by [target users] in the domain of [domain], focusing on [key goal or constraint].",
                     children: []
                 },
                 {
                     key: "SubTheme 1.2",
                     title: "Placeholder Subtheme 1.2",
-                    content: "Design a solution that leverages technology to improve everyday life by addressing a common but often overlooked problem in urban environments.",
+                    content: "Build an innovative solution that addresses a real-world challenge faced by [target users] in the domain of [domain], focusing on [key goal or constraint].",
                     children: []
                 },
                 {
                     key: "SubTheme 1.3",
                     title: "Placeholder Subtheme 1.3",
-                    content: "Design a solution that leverages technology to improve everyday life by addressing a common but often overlooked problem in urban environments.",
+                    content: "Build an innovative solution that addresses a real-world challenge faced by [target users] in the domain of [domain], focusing on [key goal or constraint].",
                     children: []
                 }
             ]
@@ -49,21 +49,21 @@ const ProblemStatementsTree = () => {
                 {
                     key: "SubTheme 2.1",
                     title: "Placeholder Subtheme 2.1",
-                    content: "Design a solution that leverages technology to improve everyday life by addressing a common but often overlooked problem in urban environments.",
+                    content: "Build an innovative solution that addresses a real-world challenge faced by [target users] in the domain of [domain], focusing on [key goal or constraint].",
                     expandedStates: [],
                     children: []
                 },
                 {
                     key: "SubTheme 2.2",
                     title: "Placeholder Subtheme 2.2",
-                    content: "Design a solution that leverages technology to improve everyday life by addressing a common but often overlooked problem in urban environments.",
+                    content: "Build an innovative solution that addresses a real-world challenge faced by [target users] in the domain of [domain], focusing on [key goal or constraint].",
                     expandedStates: [],
                     children: []
                 },
                 {
                     key: "SubTheme 2.3",
                     title: "Placeholder Subtheme 2.3",
-                    content: "Design a solution that leverages technology to improve everyday life by addressing a common but often overlooked problem in urban environments.",
+                    content: "Build an innovative solution that addresses a real-world challenge faced by [target users] in the domain of [domain], focusing on [key goal or constraint].",
                     expandedStates: [],
                     children: []
                 }
@@ -79,19 +79,19 @@ const ProblemStatementsTree = () => {
                 {
                     key: "SubTheme 3.1",
                     title: "Placeholder Subtheme 3.1",
-                    content: "Design a solution that leverages technology to improve everyday life by addressing a common but often overlooked problem in urban environments.",
+                    content: "Build an innovative solution that addresses a real-world challenge faced by [target users] in the domain of [domain], focusing on [key goal or constraint].",
                     children: []
                 },
                 {
                     key: "SubTheme 3.2",
                     title: "Placeholder Subtheme 3.2",
-                    content: "Design a solution that leverages technology to improve everyday life by addressing a common but often overlooked problem in urban environments.",
+                    content: "Build an innovative solution that addresses a real-world challenge faced by [target users] in the domain of [domain], focusing on [key goal or constraint].",
                     children: []
                 },
                 {
                     key: "SubTheme 3.3",
                     title: "Placeholder Subtheme 3.3",
-                    content: "Design a solution that leverages technology to improve everyday life by addressing a common but often overlooked problem in urban environments.",
+                    content: "Build an innovative solution that addresses a real-world challenge faced by [target users] in the domain of [domain], focusing on [key goal or constraint].",
                     children: []
                 }
             ]
@@ -114,14 +114,14 @@ const ProblemStatementsTree = () => {
                 <p>In our increasingly complex world with fast moving changes, it is paramount that our societies become more interconnected and resilient in the face of challenges. Design a hack to help strengthen and empower our community.</p>
             </div>
             <div className="themes-layout">
-                {data.map((e, i) => <ThemeCard key={e.key} data={e} onClick={() => handleClick(i)} isExpanded={expanded == i} />)}
+                {data.map((e, i) => <ThemeCard key={e.key} data={e} onClick={() => handleClick(i)} isExpanded={expanded == i} isEnabled={isEnabled} />)}
             </div>
         </div>
     )
 }
 
 const ThemeCard = (props) => {
-    const { data, onClick, isExpanded } = props
+    const { data, onClick, isExpanded, isEnabled } = props
     const animate = {
         layout: "position",
         animate: {opacity: 1},
@@ -145,15 +145,20 @@ const ThemeCard = (props) => {
                         <motion.p layout="position" className="theme-card-content">{data.content}</motion.p>
                     </motion.div>
                 </motion.div>
-                {isExpanded && 
+                {isExpanded &&
                     <motion.div {... animate} className="subthemes-layout">
                         <hr style={{border: `1px solid ${data.color}`}}/>
                         {data.children.map(e => <SubThemeCard key={e.key} data={e} />)}
                     </motion.div>
                 }
-                <motion.div className={`theme-card-expand-btn ${isExpanded ? "theme-card-expand-btn-expanded" : ""}`} onClick={onClick}>
-                    <FaCaretDown size={24} />
-                </motion.div>
+                {isEnabled 
+                    ? 
+                        <motion.div className={`theme-card-expand-btn ${isExpanded ? "theme-card-expand-btn-expanded" : ""}`} onClick={onClick}>
+                            <FaCaretDown size={24} />
+                        </motion.div> 
+                    :
+                        <p>[SubThemes Coming Soon]</p>
+                }
             </motion.div>
         </EntranceAnimation>
     )
