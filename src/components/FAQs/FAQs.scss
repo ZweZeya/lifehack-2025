@@ -31,7 +31,8 @@
   }
 }
 
-@media (max-width: 1280px) {  .faqs-container {
+@media (max-width: 1280px) {  
+  .faqs-container {
     gap: 2rem;
   }
 
@@ -41,11 +42,17 @@
 }
 
 @media (max-width: 767px) {
+  .faqs-container {
+    gap: 1.4rem;
+  }
+
   .faq-question {
-    font-size: 1rem;
+    margin: 0.3rem 0.2rem 0.3rem 0.2rem;
+    font-size: 0.9rem;
   }
   
   .faq-answer {
-    font-size: 0.8rem;
+    margin: 0.3rem 0.2rem 0.3rem 0.2rem;
+    font-size: 0.7rem;
   }
 }
