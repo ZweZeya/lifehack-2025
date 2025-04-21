@@ -7,7 +7,7 @@ const Register = () => {
     return (
         <a href="" className="register-button">
             <div className="register-title">
-                <LuClipboardPen className="register-icon"/>
+                {/* <LuClipboardPen className="register-icon"/> */}
                 <Header className="register-label">Register Now!</Header>
             </div>
             <div className="register-subtitle">

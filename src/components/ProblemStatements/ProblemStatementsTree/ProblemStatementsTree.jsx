@@ -157,7 +157,7 @@ const ThemeCard = (props) => {
                             <FaCaretDown size={24} />
                         </motion.div> 
                     :
-                        <p>[SubThemes Coming Soon]</p>
+                        <p>[Subthemes Coming Soon]</p>
                 }
             </motion.div>
         </EntranceAnimation>

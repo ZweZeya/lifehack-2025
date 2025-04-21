@@ -24,6 +24,7 @@ const Background = () => {
         p.windowResized = () => {
             p.resizeCanvas(p.windowWidth, p.windowHeight);
             screen = p.createGraphics(p.width, p.height);
+            setupMoon();
             setupGrid();
         }
 
