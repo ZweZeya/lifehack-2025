@@ -14,7 +14,7 @@ const Sponsors = () => {
             ],
         },
         "Silver": {
-            color: "#B7B7B7",
+            color: "#ffffff",
             logos: [
                 {
                     img: "st.png",
