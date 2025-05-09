@@ -22,7 +22,7 @@ const ContactUs = () => {
         {
             name: "email",
             icon: RiMailLine,
-            to: "",
+            to: "compclub@comp.nus.edu.sg",
         }
     ]
 
