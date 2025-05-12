@@ -9,7 +9,7 @@ const AboutWindowFrame = () => {
                 <Header className="about-header">What is LifeHack?</Header>
                 <p>LifeHack is the annual flagship hackathon organised by NUS Students' Computing Club.</p>
                 <p>LifeHack 2025 fosters creative solutions to enhance community interconnectivity. The event challenges participants to formulate impactful ideas, aiming to inspire innovation for a better-connected world.</p>
-                <p>The event will run from 29 May to 1 June</p>
+                <p>The event will run from 16 June to 19 June</p>
             </div>
         </WindowFrame>
     )
