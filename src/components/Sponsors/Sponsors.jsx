@@ -33,6 +33,11 @@ const Sponsors = () => {
 
     return (
         <>
+            <Header>Partner</Header>
+            <div className="sponsors-container">
+                <img src="b71.svg" style={{ height: "30vh" }}/>
+            </div>
+
             <Header>Sponsors</Header>
             <div className="sponsors-container">
                 {

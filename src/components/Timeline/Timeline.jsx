@@ -15,7 +15,7 @@ const Timeline = () => {
 
     const events = [
         {
-            date: "21 April",
+            date: "13 May",
             title: "Registration",
             content: "Gather your friends and join together in teams of 2-4. Get excited to participate in the Hackathon.",
             icon: LuClipboardPen,

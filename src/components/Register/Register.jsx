@@ -11,7 +11,7 @@ const Register = () => {
                 <Header className="register-label">Register Now!</Header>
             </div>
             <div className="register-subtitle">
-                <h3>Ends 9 May</h3>
+                <h3>Ends 30 May</h3>
             </div>
         </a>
     );
