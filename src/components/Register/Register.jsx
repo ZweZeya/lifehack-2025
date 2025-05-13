@@ -5,7 +5,7 @@ import "./Register.scss"
 
 const Register = () => {
     return (
-        <a href="" className="register-button">
+        <a href="https://lifehack-2025.devpost.com/register?flow%5Bdata%5D%5Bchallenge_id%5D=24777&flow%5Bname%5D=register_for_challenge" className="register-button">
             <div className="register-title">
                 {/* <LuClipboardPen className="register-icon"/> */}
                 <Header className="register-label">Register Now!</Header>
