@@ -26,6 +26,10 @@ const Sponsors = () => {
                 {
                     img: "millennium.png",
                 },
+                {
+                    className: "sponsor-logo--short",
+                    img: "csit.png",
+                },
             ],
         },
         
