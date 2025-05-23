@@ -11,85 +11,34 @@ const FAQs = () => {
 
     const data = [
         {
-            question: "Who can participate in LifeHack 2025?",
-            answer: <p>
-                LifeHack 2025 is open to all post-secondary students as of Academic Year 2024/25.
-                This includes Polytechnic students, Junior College students, ITE students, students awaiting university admission, and current undergraduates.
-                No prior experience is required — just a passion to build and create.
-            </p>
-        },
-        {
             question: "What is the format and schedule of the hackathon?",
             answer: <p>
-                LifeHack 2025 is a hybrid hackathon running from 16 June to 19 June 2025.
-                The event begins with an Opening Ceremony and various onsite activities on 16 June,
-                followed by online hacking and workshops on 17 and 18 June.
-                The Finale and presentations take place physically on 19 June. 
-            </p>
-        },
-        {
-            question: "How many people are there in a team?",
-            answer: <p>
-                Teams should consist of 2 to 4 participants.
-                You may form your team before or after registration.
-            </p>
-        },
-        {
-            question: "Can I join if I don't have a team?",
-            answer: <p>
-                Yes, solo participants are welcome!
-                If you register without a team, the organizers will assist in team matching so you can connect with other like-minded individuals before the event.
-            </p>
-        },
-        {
-            question: "Do I need prior hackathon experience to take part?",
-            answer: <p>
-                Not at all! LifeHack 2025 is beginner-friendly and provides workshops and mentor support throughout the event.
-                Whether you're new to hackathons or already experienced, there's something for everyone.
+                LifeHack 2025 is a hybrid hackathon running from 16 June to 19 June 2025. The event begins with an opening ceremony and various onsite activities on 16 June, and the problem statement will be released exclusively at the ceremony. Online hacking takes place on 17 and 18 June, and the Finale with team presentations will be held physically on 19 June.
             </p>
         },
         {
             question: "How are submissions evaluated?",
             answer: <p>
-                Submissions are judged over three rounds.
-                Judging criteria include technical implementation, relevance, innovation, usability, and potential impact.
-                <ul>
-                    <li>In Round 2, selected teams will be invited to pitch their hacks live.</li>
-                    <li>In Round 3, the top ten finalists will face off in the finale, and judges will decide the winners based on both presentation and earlier submission scores.</li>
-                </ul>
+                Submissions are evaluated in two rounds based on criteria such as technical implementation, relevance, innovation, usability, and potential impact. 
+The top ten teams will make it to the Finale, where judges will determine the winners by considering both their presentations and their earlier submission scores.
             </p>
         },
         {
             question: "What is required to make a submission?",
             answer: <p>
-                Teams are required to submit their solution via a Google Form that will be provided on the submission day.
-                Each submission must include:
-                <ul>
-                    <li>A public GitHub repository link (if applicable)</li>
-                    <li>A demo video with a maximum duration of 10 minutes</li>
-                    <li>
-                        A written description of the project that addresses the following questions:
-                        <ol>
-                            <br />
-                            <li>What is your project called?</li>
-                            <li>What problem statement are you addressing?</li>
-                            <li>How does your solution tackle the problem?</li>
-                            <li>How did you build it?</li>
-                            <li>Additionally, if GitHub is used, the submission must include a README.md file, as well as any other relevant files that are not included in the repository</li>
-                        </ol>
-                    </li>
-                </ul>
-
+                All teams must submit their project on Devpost. Your submission must include:
+Project title and short description
+Detailed project description (Fill in project_information.docx with all fields filled and rename to team_name.docx)
+Public GitHub link with a clear README and all relevant files
+Demo video (max 10 mins) hosted on YouTube and linked on Devpost
+Only one member needs to submit the project on Devpost, but all team members must be tagged as contributors.
+Judges will evaluate your submission directly from your Devpost project page.
             </p>
-            
         },
         {
             question: "What if I can't attend every day?",
             answer: <p>
-                While attending the full event is encouraged, it's not mandatory to be present every day.
-                However, to qualify for the lucky draw, you must attend both the Opening Day (16 June) and at least one workshop.
-                Teams are still eligible to submit their hacks as long as they meet the submission deadline and follow the event rules.
-                Round 2 and finalists must have at least one team member present during their respective pitches.
+                Attending the Opening Day on 16 June is mandatory, as the problem statement will be released during the opening ceremony. Day 2 and 3 (17–18 June) will be conducted virtually for project development. The Finale on 19 June will be held physically, and finalist teams must have at least one member present during their pitch.
             </p>
         },
     ];
@@ -132,7 +81,7 @@ const FAQBox = (props) => {
                 {props.isExpanded &&
                     <motion.span {...animate}>
                         <motion.hr style={{ border: "1px solid" }} />
-                        <motion.p className="faq-answer">{answer}</motion.p>
+                        <motion.div className="faq-answer">{answer}</motion.div>
                     </motion.span>
                 }
             </motion.span>
