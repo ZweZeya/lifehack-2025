@@ -17,12 +17,14 @@ const Timeline = () => {
         {
             date: "13 May",
             title: "Registration",
+            venue: "Online",
             content: "Gather your friends and join together in teams of 2-4. Get excited to participate in the Hackathon.",
             icon: LuClipboardPen,
             iconColor: "#2a9df4",
         },
         {
             date: "16 June",
+            venue: "CAPT Dining Hall",
             title: "Opening Ceremony & Activities",
             content: "Come down and join us in games, workshops, and lucky draws. Make new friends, win prizes and start hacking on a high note.",
             icon: MdOutlineCelebration,
@@ -31,6 +33,7 @@ const Timeline = () => {
         {
             date: "18 June",
             title: "Hack Submission",
+            venue: "Online",
             content: "Submit your exciting hack along with a pitch video. Get ready to be selected to be one of our exciting semi-finalists.",
             icon: HiComputerDesktop,
             iconColor: "#1167b1",
@@ -38,6 +41,7 @@ const Timeline = () => {
         {
             date: "19 June",
             title: "Finale",
+            venue: "Utown Auditorium 1",
             content: "Pitch you hack and meet industry leaders. Celebrate your hard earned hackathon victory.",
             icon: FaMedal,
             iconColor: "#031273",
@@ -64,6 +68,7 @@ const Timeline = () => {
                                 <div>
                                     <h3 className="timeline-event-header">{event.title}</h3>
                                     <p>{event.content}</p>
+                                    <p className="timeline-event-venue">({event.venue})</p>
                                 </div>
                             </WindowFrame>
                         </VerticalTimelineElement>

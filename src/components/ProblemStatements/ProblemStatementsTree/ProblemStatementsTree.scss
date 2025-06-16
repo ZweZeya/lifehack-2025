@@ -103,7 +103,11 @@
 }
 
 .subtheme-card-content {
-  font-size: 1rem;
+  font-size: 0.9rem;
+}
+
+.subtheme-text-bold {
+  font-weight: 700;
 }
 
 @media (max-width: 767px) {
@@ -138,8 +142,8 @@
     text-align: center;
   }
   
-  .subtheme-card-content {
-    font-size: 0.8rem;
+  .subtheme-card-text {
+    font-size: 0.4rem;
   }
 
   .theme-card-expand-btn {

@@ -43,7 +43,7 @@ function App() {
 
                 <EntranceAnimation>
                     <section id="problem-statements">
-                        <ProblemStatementsTree isEnabled={false} />
+                        <ProblemStatementsTree isEnabled={true} />
                     </section>
                 </EntranceAnimation>
 
